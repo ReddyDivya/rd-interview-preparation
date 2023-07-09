@@ -31,7 +31,6 @@ Top 20 REACT Interview Questions 💼🎯
 ---
 
 # Chapter 01 - Inception
----
 - What is `Emmet`?
 - Difference between a `Library and Framework`?
 - What is `CDN`? Why do we `use` it?
@@ -44,7 +43,7 @@ Top 20 REACT Interview Questions 💼🎯
 ---
 
 # Chapter 02 - Igniting our App
----
+
 - What is `NPM`?
 - What is `Parcel/Webpack`? Why `do we need it`?
 - What is `.parcel-cache`
@@ -63,4 +62,16 @@ own words.
 - Read about `dif bundlers`: `vite`, `webpack`, `parcel`
 - Read about: `^` - `caret` and `~` - `tilde`
 - Read about `Script types in html` (MDN Docs)
+---
+
+# Chapter 03 - Laying the Foundation
+- `JSX`
+- `React.createElement` vs `JSX`
+- `Benefits of JSX`
+- `Behind the Scenes of JSX`
+- `Babel` & `parcel` role in JSX
+- `Components`
+- `Functional Components`
+- `Composing Components` 
+
 
