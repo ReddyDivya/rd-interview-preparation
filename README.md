@@ -32,15 +32,14 @@ Top 20 REACT Interview Questions 💼🎯
 
 # Chapter 01 - Inception
 ---
-
-What is Emmet?
-Difference between a Library and Framework?
-What is CDN? Why do we use it?
-Why is React known as React?
-What is cross-origin in script tag?
-What is the difference between React and ReactDOM?
-What is the difference between react.development.js and react.production.js files via CDN?
-What are async and defer?
+- What is `Emmet`?
+- Difference between a `Library and Framework`?
+- What is `CDN`? Why do we `use` it?
+- Why is `React known as React`?
+- What is `crossorigin in script tag`?
+- What is difference between `React and ReactDOM`?
+- What is difference between `react.development.js` and `react.production.js` files via CDN?
+- What is `async and defer`?
 
 ---
 
