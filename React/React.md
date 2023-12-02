@@ -83,10 +83,24 @@ A: Web crawlers, also known as spiders, bots, or web robots, are automated progr
 
 ---
 
-### 
+### What is `nodemodules`?
+A: The `node_modules` directory is a standard directory in a Node.js project that contains the dependencies (third-party packages or libraries) used by the project. When you install packages using Node Package Manager (npm) or Yarn, these packages are downloaded and stored in the node_modules directory.
 
+```
+## dependenies management
+"dependencies": {
+  "express": "^4.17.1",
+  "axios": "^0.21.1"
+}
+```
 
+- node_modules directory is not included in version control systems (like Git). Instead, the `package.json` and `package-lock.json` files are used to describe the project's dependencies.
+  
+- Developers can then `run npm install` to fetch the dependencies based on the version information in these files.
 
+- The node_modules directory can contain a large number of files, especially for projects with many dependencies. These files include the actual code of the dependencies, as well as various configuration files and documentation. Since these files are managed by package managers, developers typically don't need to interact directly with the contents of the node_modules directory.
+
+---
 
 - What is `Functional Components`?
 - What is `class components`?
