@@ -60,9 +60,33 @@ index.html
 </body>
 ```
 
-### What is `Progressive Web App (PWA) configurations`?
-A: 
+## What is `Progressive Web App (PWA) configurations`?
+A:
+
 ---
+
+## What is the purpose of `robots.txt`?
+A: `robots.txt` is a standard used by websites to communicate with web crawlers and other automated agents, specifying which areas of the site they are allowed to crawl and index. It is a simple text file placed at the root of a website's domain. The primary purpose of robots.txt is to provide guidance to web crawlers and prevent them from accessing certain parts of the website. This helps in SEO(Search Engine Optimization) and makes our application crawlable for search engines.
+
+```
+User-agent: *
+Disallow: /private/
+Disallow: /restricted-page.html
+```
+
+`User-agent: *`: Applies rules to all web crawlers (the wildcard * means "all user-agents").
+`Disallow: /private/`: Instructs web crawlers not to crawl any content under the /private/ directory.
+`Disallow: /restricted-page.html`: Specifically disallows crawling of the page located at /restricted-page.html.
+
+### Who are `web crawlers`?
+A: Web crawlers, also known as spiders, bots, or web robots, are automated programs or scripts designed to browse and index content on the internet. They play a crucial role in the operation of search engines and other services that rely on collecting information from web pages.
+
+---
+
+### 
+
+
+
 
 - What is `Functional Components`?
 - What is `class components`?
