@@ -30,12 +30,14 @@ A: `Packaging the content` generally refers to bundling and preparing the applic
 ## What is `build`?
 A: `Create-react-app` package has a `webpack bundler` which compiles our project and runs it on localhost(server).
 
+---
+
 ## What is in the `public` folder?
 A: `index.html` - The main HTML file for our React application. This file typically contains a root element (e.g., a <div> with an id like `root`) where our React app is mounted. It also includes `links to external stylesheets`, `scripts`, and other `meta` tags.
 
 `Favicon and Other Static Assets` - Images, icons, or other files that should be served directly by the server. For example, a favicon.ico file for the website's icon.
 
-`manifest.json` - A JSON file that provides metadata about the web application. It includes information such as the name, description, icons, and other settings. This is often used for `Progressive Web App (PWA) configurations`.
+`manifest.json` - This is a JSON file that provides metadata about the web application. It includes information such as the application's name, icons for different devices, background color, display mode, and other settings. The manifest is used by the browser when a user decides to add the web app to their home screen.
 
 `robots.txt` - A file used by web crawlers to understand how they should navigate and index your site. It specifies rules about which parts of your site can or cannot be crawled.
 
@@ -58,6 +60,8 @@ index.html
 </body>
 ```
 
+### What is `Progressive Web App (PWA) configurations`?
+A: 
 ---
 
 - What is `Functional Components`?
