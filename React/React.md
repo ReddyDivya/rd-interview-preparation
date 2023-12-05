@@ -246,7 +246,136 @@ const App = () => {
 }
 ```
 ---
+### What is `useState`?
+A: `useState` is a React hook that was introduced in React 16.8 to functional components. It provides a way for functional components to have local state. 
+- Before the introduction of hooks, only class components could manage state. Now, with useState, functional components can manage state as well, making them more powerful and expressive.
 
+```
+import React, { useState } from 'react';
+
+const Counter = () => {
+/*
+  The useState hook returns an array with two elements:
+  - 1. The current state value.
+  - 2. A function that allows you to update the state.
+*/
+  const [count, setCount] = useState(0); //initial value is 0
+
+  const increment = () => {
+    // setCount is used to update the state
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+- When the state is updated, React re-renders the component, and the new state value is displayed.
+- We can use multiple useState calls in a single functional component to manage multiple pieces of state independently.
+
+---
+
+### What is the difference between the `useState variables` and `normal variables`?
+A: The primary difference between useState variables and normal variables lies in how they interact with the React component lifecycle and the rendering process. 
+
+### useState Variables
+- It enables functional components to have a local state.
+- When a useState variable is updated using its corresponding update function (e.g., setCount), React automatically triggers a re-render of the component.
+- React efficiently updates only the parts of the DOM affected by the state change, optimizing performance.
+```
+// Using useState
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+```
+
+### Normal variables
+- If we use normal variables to store data in a React component, changing the value of those variables does not automatically trigger a re-render.
+- Normal variables are commonly used in class components and functional components without hooks.
+- Normal variables can be used for various purposes, including storing data that doesn't affect the component's rendering or doesn't need to trigger a re-render.
+```
+import React from 'react';
+
+class ExampleComponent extends React.Component {
+  render() {
+    const msg = "This is a normal variable";
+
+    return (
+      <div>
+        <p>{msg}</p>
+      </div>
+    );
+  }
+}
+
+export default ExampleComponent;
+```
+
+---
+### Why are we using the `[] in useState` initialization?
+A: In the useState hook in React, the square brackets [] are used as array destructuring to capture the current state value and the function that updates that state. 
+- The [] around state and setState are part of the array destructuring syntax in JavaScript. They are used to unpack the values returned by useState into separate variables.
+
+```
+const [state, setState] = useState(initialState);
+```
+Here's a breakdown of how it works:
+
+### Initialization:
+
+useState(initialState) initializes the state with an initial value, and it returns an array where:
+The first element is the current state value (state in the example).
+The second element is the function to update the state (setState in the example).
+
+### Array Destructuring
+The const [state, setState] syntax is array destructuring. It takes the two elements from the array returned by useState and assigns them to the variables state and setState.
+
+```
+import React, { useState } from 'react';
+
+const Counter = () => {
+  // useState returns an array: [count, setCount]
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    // setCount is used to update the count state
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+- Using array destructuring makes the code concise and readable, and it's a common pattern when working with the useState hook.
+
+In this example, useState(0) initializes the count state with an initial value of 0. The array destructuring const [count, setCount] is used to capture the current state value (count) and the function to update the state (setCount). The increment function uses setCount to update the state, triggering a re-render with the updated value.
+
+---
 ### What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
 - What are `props`?
