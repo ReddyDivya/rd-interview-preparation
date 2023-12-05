@@ -1,6 +1,6 @@
 # React Interview Question and Answers
 
-##Q How to create a `React Projects`?
+## Q: How to create a `React Projects`?
 A: `Create React App (CRA)` is a package, more precisely, it's a command-line tool that sets up a new React project with a sensible default configuration.
   - We need to have both `Node.js` and `npm (Node Package Manager)` installed on our machine. CRA relies on these tools for project setup and management `Node > 14 version`.
   - This package give us bundlers, set up of jest, react-testing libraries. It's a ready to work on project instead of installing all these.
@@ -17,7 +17,7 @@ npm start //starts development server
 
 ---
 
-##Q What is `Packaging content`?
+## Q: What is `Packaging content`?
 A: `Packaging the content` generally refers to bundling and preparing the application's source code, assets, and dependencies for deployment.
 - This process ensures that the application is optimized for performance, reducing file sizes and organizing the code in a way that can be efficiently served to users.
 - Like Minification, Bundling (mostly used is Webpack), Transpilation, Tree Shaking, Code Splitting.
@@ -27,12 +27,12 @@ A: `Packaging the content` generally refers to bundling and preparing the applic
 
 ---
 
-##Q What is `build`?
+## Q: What is `build`?
 A: `Create-react-app` package has a `webpack bundler` which compiles our project and runs it on localhost(server).
 
 ---
 
-##Q What is in the `public` folder?
+## Q: What is in the `public` folder?
 A: `index.html` - The main HTML file for our React application. This file typically contains a root element (e.g., a <div> with an id like `root`) where our React app is mounted. It also includes `links to external stylesheets`, `scripts`, and other `meta` tags.
 
 `Favicon and Other Static Assets` - Images, icons, or other files that should be served directly by the server. For example, a favicon.ico file for the website's icon.
@@ -60,12 +60,12 @@ index.html
 </body>
 ```
 
-##Q What is `Progressive Web App (PWA) configurations`?
+## Q: What is `Progressive Web App (PWA) configurations`?
 A: `Progressive Web App (PWA)` configurations refer to the settings and metadata that define how a web application behaves when installed on a user's device as a Progressive Web App. PWAs are web applications that provide a native app-like experience while being accessed through a web browser. They aim to combine the best features of both web and native apps, offering offline capabilities, push notifications, and more.
 
 ---
 
-##Q What is the purpose of `robots.txt`?
+## Q: What is the purpose of `robots.txt`?
 A: `robots.txt` is a standard used by websites to communicate with web crawlers and other automated agents, specifying which areas of the site they are allowed to crawl and index. It is a simple text file placed at the root of a website's domain. The primary purpose of robots.txt is to provide guidance to web crawlers and prevent them from accessing certain parts of the website. This helps in SEO(Search Engine Optimization) and makes our application crawlable for search engines.
 
 ```
@@ -80,12 +80,12 @@ Disallow: /restricted-page.html
 
 ---
 
-##Q Who are `web crawlers`?
+## Q: Who are `web crawlers`?
 A: Web crawlers, also known as spiders, bots, or web robots, are automated programs or scripts designed to browse and index content on the internet. They play a crucial role in the operation of search engines and other services that rely on collecting information from web pages.
 
 ---
 
-##Q What is `nodemodules`?
+## Q: What is `nodemodules`?
 A: The `node_modules` directory is a standard directory in a Node.js project that contains the dependencies (third-party packages or libraries) used by the project. When you install packages using Node Package Manager (npm) or Yarn, these packages are downloaded and stored in the node_modules directory.
 
 ```
@@ -104,7 +104,7 @@ A: The `node_modules` directory is a standard directory in a Node.js project tha
 
 ---
 
-##Q What is `Functional Components`?
+## Q: What is `Functional Components`?
 A: `Functional components` are a type of component that are primarily defined as normal JavaScript functions.
 - They are also sometimes referred to as stateless components because, initially, they can't manage state or lifecycle methods. However, with the introduction of React Hooks in React 16.8, functional components gained the ability to use state and lifecycle features through hooks.
 ```
@@ -126,7 +126,7 @@ export default FunctionalComponent;
 
 ---
 
-##Q What is `JSX`?
+## Q: What is `JSX`?
 A: `JSX stands for JavaScript XML`. It's a syntax extension for JavaScript recommended by React for describing what the UI should look like. 
 - JSX is used to create React DOM elements.
 - JSX is not HTML inside the JavaScript. JSX is an HTML-like syntax.
@@ -145,7 +145,7 @@ const element = <p>Hello, {name}!</p>;
 ```
 
 --- 
-##Q What is `state` and `props`?
+## Q: What is `state` and `props`?
 A: `state` and `props` are used to manage and pass data in a React application. 
 
 ### State:
@@ -262,7 +262,7 @@ const App = () => {
 }
 ```
 ---
-##Q What is `useState`?
+## Q: What is `useState`?
 A: `useState` is a React hook that was introduced in React 16.8 to functional components. It provides a way for functional components to have local state. 
 - Before the introduction of hooks, only class components could manage state. Now, with useState, functional components can manage state as well, making them more powerful and expressive.
 
@@ -297,7 +297,7 @@ export default Counter;
 
 ---
 
-##Q What is the difference between the `useState variables` and `normal variables`?
+## Q: What is the difference between the `useState variables` and `normal variables`?
 A: The primary difference between useState variables and normal variables lies in how they interact with the React component lifecycle and the rendering process. 
 
 ### useState Variables
@@ -347,7 +347,7 @@ export default ExampleComponent;
 ```
 
 ---
-##Q Why are we using the `[] in useState` initialization?
+## Q: Why are we using the `[] in useState` initialization?
 A: In the useState hook in React, the square brackets [] are used as array destructuring to capture the current state value and the function that updates that state. 
 - The [] around state and setState are part of the array destructuring syntax in JavaScript. They are used to unpack the values returned by useState into separate variables.
 
@@ -392,7 +392,7 @@ export default Counter;
 In this example, useState(0) initializes the count state with an initial value of 0. The array destructuring const [count, setCount] is used to capture the current state value (count) and the function to update the state (setCount). The increment function uses setCount to update the state, triggering a re-render with the updated value.
 
 ---
-##Q What's `named export` and `export default` in React?
+## Q: What's `named export` and `export default` in React?
 A: There are two main ways to export elements from a module: `named exports (normal exports)` and `default exports`.
 
 ### Named Exports (Normal Exports):
@@ -435,12 +435,12 @@ import CustomName from './MyComponent';
 
 ---
 
-##Q Is it a good way to add inline CSS style to elements?
+## Q: Is it a good way to add inline CSS style to elements?
 A: Not a good way to add inline CSS style to the elements. One good approach is writing in an App.css(external CSS file). Another approach is a CSS Framework like Tailwind CSS.
 
 ---
 
-##Q What is `Tailwind CSS`?
+## Q: What is `Tailwind CSS`?
 A: `Tailwind CSS` is a CSS Framework, it is a tool that helps us style our website or large web application. It gives us pre-built classes, Tailwind provides small building blocks (called utility classes) that we can combine to create our own unique designs.
 
 ### Install `Tailwind CSS`
@@ -471,7 +471,7 @@ module.exports = {
 @tailwind utilities;
 ```
 ---
-##Q Why do we add tailwind directives to index.css?
+## Q: Why do we add tailwind directives to index.css?
 A: Tailwind CSS is typically added to the index.css file (or any other main CSS file) using directives to import the Tailwind styles and utilities. 
 
 The directives are specific comments that instruct tools like PostCSS to process and include the Tailwind styles into the final CSS file. These directives are necessary for integrating Tailwind into our project.
@@ -481,7 +481,7 @@ The directives are specific comments that instruct tools like PostCSS to process
 
 ---
 
-##Q Can you build a `carousal` in React?
+## Q: Can you build a `carousal` in React?
 A: ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/fd149223-7520-432b-ac0b-db1669e9d390)
 
 ### Optimizing the above code
@@ -490,7 +490,7 @@ A: ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/341811
 
 ---
 
-##Q What is `class components`?
+## Q: What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
 - What are `props`?
 - What are `states`?
