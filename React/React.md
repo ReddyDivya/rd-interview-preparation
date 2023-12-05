@@ -472,15 +472,23 @@ module.exports = {
 @tailwind components;
 @tailwind utilities;
 ```
+---
+### Why do we add tailwind directives to index.css?
+A: Tailwind CSS is typically added to the index.css file (or any other main CSS file) using directives to import the Tailwind styles and utilities. 
 
+The directives are specific comments that instruct tools like PostCSS to process and include the Tailwind styles into the final CSS file. These directives are necessary for integrating Tailwind into our project.
 
+### To center an image using Tailwind CSS
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/a373e306-6b08-45e5-ada4-87dced45bc52)
 
-
-
-
+---
 
 ### Can you build a `carousal` in React?
-A: 
+A: ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/fd149223-7520-432b-ac0b-db1669e9d390)
+
+### Optimizing the above code
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/88b70faa-04b9-41d5-a110-a84f36530eab)
+
 
 ---
 
