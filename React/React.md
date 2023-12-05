@@ -60,6 +60,8 @@ index.html
 </body>
 ```
 
+---
+
 ## Q: What is `Progressive Web App (PWA) configurations`?
 A: `Progressive Web App (PWA)` configurations refer to the settings and metadata that define how a web application behaves when installed on a user's device as a Progressive Web App. PWAs are web applications that provide a native app-like experience while being accessed through a web browser. They aim to combine the best features of both web and native apps, offering offline capabilities, push notifications, and more.
 
