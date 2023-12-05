@@ -392,6 +392,93 @@ export default Counter;
 In this example, useState(0) initializes the count state with an initial value of 0. The array destructuring const [count, setCount] is used to capture the current state value (count) and the function to update the state (setCount). The increment function uses setCount to update the state, triggering a re-render with the updated value.
 
 ---
+### What's `named export` and `export default` in React?
+A: There are two main ways to export elements from a module: `named exports (normal exports)` and `default exports`.
+
+### Named Exports (Normal Exports):
+In named exports, we have to export multiple elements from a module using the export keyword, and we have to import them using the same name in the import statement. Each exported element is identified by a name.
+
+```
+// File: MyComponent.js
+
+export const FunctionComponent = () => {
+  // ... component logic
+};
+
+export const AnotherComponent = () => {
+  // ... component logic
+};
+```
+
+To import these components in another file, you use their names:
+```
+import { FunctionComponent, AnotherComponent } from './MyComponent';
+```
+
+### Export Default
+In export default, we export a single element as the default export from a module. There can only be one default export per module. When importing a default export, we can use any name for the imported element.
+
+```
+// File: MyComponent.js
+
+const MyComponent = () => {
+  // ... component logic
+};
+
+export default MyComponent;
+```
+
+To import the default export in another file, you can use any name:
+```
+import CustomName from './MyComponent';
+```
+
+---
+
+### 
+
+### Is it a good way to add inline CSS style to elements?
+A: Not a good way to add inline CSS style to the elements. One good approach is writing in an App.css(external CSS file). Another approach is a CSS Framework like Tailwind CSS.
+
+---
+
+### What is `Tailwind CSS`?
+A: `Tailwind CSS` is a CSS Framework, it is a tool that helps us style our website or large web application. It gives us pre-built classes, Tailwind provides small building blocks (called utility classes) that we can combine to create our own unique designs.
+
+### Install `Tailwind CSS`
+A: ### Install
+```
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+It creates tailwind.config.js file.
+
+### Configure your template paths (tailwind.config.js)
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+### Add the Tailwind directives to your CSS (src/App.css)
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+
+
+
+
+
+
 ### Can you build a `carousal` in React?
 A: 
 
