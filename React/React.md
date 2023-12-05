@@ -78,6 +78,8 @@ Disallow: /restricted-page.html
 `Disallow: /private/`: Instructs web crawlers not to crawl any content under the /private/ directory.
 `Disallow: /restricted-page.html`: Specifically disallows crawling of the page located at /restricted-page.html.
 
+---
+
 ### Who are `web crawlers`?
 A: Web crawlers, also known as spiders, bots, or web robots, are automated programs or scripts designed to browse and index content on the internet. They play a crucial role in the operation of search engines and other services that rely on collecting information from web pages.
 
@@ -146,7 +148,7 @@ const element = <p>Hello, {name}!</p>;
 ### What is `state` and `props`?
 A: `state` and `props` are used to manage and pass data in a React application. 
 
-`State`
+### State:
 - state is a built-in object in React components that represents the current condition or data of the component.
 - It allows a component to manage its own data and to be aware of changes to that data. When the state of a component changes, React automatically re-renders the component to reflect the updated state.
 
@@ -194,8 +196,8 @@ class Counter extends React.Component {
   }
 }
 ```
-
-`Props` - props (short for properties) are inputs to a React component. They are values passed from a parent component to a child component.
+### Props:
+- props (short for properties) are inputs to a React component. They are values passed from a parent component to a child component.
 - Props allow us to customize and configure a component based on the data received from its parent. They make it easy to reuse components and create a hierarchy of components.
 - Props are passed as attributes in JSX when a component is used.
 
