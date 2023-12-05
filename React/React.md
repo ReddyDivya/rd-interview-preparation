@@ -392,7 +392,10 @@ export default Counter;
 In this example, useState(0) initializes the count state with an initial value of 0. The array destructuring const [count, setCount] is used to capture the current state value (count) and the function to update the state (setCount). The increment function uses setCount to update the state, triggering a re-render with the updated value.
 
 ---
+### Can you build a `carousal` in React?
+A: 
 
+---
 
 ### What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
