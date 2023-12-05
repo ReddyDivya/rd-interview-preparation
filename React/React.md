@@ -103,12 +103,149 @@ A: The `node_modules` directory is a standard directory in a Node.js project tha
 ---
 
 ### What is `Functional Components`?
-A: 
+A: `Functional components` are a type of component that are primarily defined as normal JavaScript functions.
+- They are also sometimes referred to as stateless components because, initially, they can't manage state or lifecycle methods. However, with the introduction of React Hooks in React 16.8, functional components gained the ability to use state and lifecycle features through hooks.
+```
+import React from 'react';
+
+const FunctionalComponent = () => {
+  return (
+    <div>
+      <h1>Hello, I'm a functional component!</h1>
+    </div>
+  );
+};
+
+export default FunctionalComponent;
+```
+- const FunctionalComponent declares a functional component.
+- () => {...} is an arrow function that defines the component's body.
+- The component returns JSX, describing the structure and content to be rendered.
 
 ---
 
-- What is `class components`?
-- What is `JSX`?
+### What is `JSX`?
+A: `JSX stands for JavaScript XML`. It's a syntax extension for JavaScript recommended by React for describing what the UI should look like. 
+- JSX is used to create React DOM elements.
+- JSX is not HTML inside the JavaScript. JSX is an HTML-like syntax.
+- JSX is not part of React.
+- We can write React without JSX. It provides a more concise and readable syntax for defining UI components. JSX makes developers' lives easy.
+
+```
+const element = <h1>Hello, JSX!</h1>;
+```
+- The JSX is transformed into a series of React.createElement calls during the build process.
+
+- We can embed JavaScript expressions within curly braces {}. This allows us to include dynamic content and JavaScript logic within our JSX.
+```
+const name = "John";
+const element = <p>Hello, {name}!</p>;
+```
+
+--- 
+### What is `state` and `props`?
+A: `state` and `props` are used to manage and pass data in a React application. 
+
+`State`
+- state is a built-in object in React components that represents the current condition or data of the component.
+- It allows a component to manage its own data and to be aware of changes to that data. When the state of a component changes, React automatically re-renders the component to reflect the updated state.
+
+### In functional components, state can be managed using the `useState` hook.
+```
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+};
+```
+
+### In class components, state is initialized in the constructor using this.state and updated using this.setState().
+```
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.incrementCount}>Increment</button>
+      </div>
+    );
+  }
+}
+```
+
+`Props` - props (short for properties) are inputs to a React component. They are values passed from a parent component to a child component.
+- Props allow us to customize and configure a component based on the data received from its parent. They make it easy to reuse components and create a hierarchy of components.
+- Props are passed as attributes in JSX when a component is used.
+
+In function components,
+```
+// Parent Component
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+const ParentComponent = () => {
+  const data = 'Hello from parent!';
+  
+  return <ChildComponent message={data} />;
+};
+
+// Child Component
+const ChildComponent = (props) => {
+  return <p>{props.message}</p>;
+};
+```
+- The ParentComponent passes the message prop to the ChildComponent, which then uses that prop to display the message.
+
+In class components, props are accessed through the `this.props` object. When a component is created, React automatically assigns the props passed to it as attributes of this.props. Here's an example demonstrating how props are used in a class component:
+
+- Remember that props in class components are read-only.
+
+```
+import React from 'react';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, {this.props.name}!</h1>
+        <p>{this.props.message}</p>
+      </div>
+    );
+  }
+}
+
+// Example usage of the Greeting component
+const App = () => {
+  return (
+    <Greeting name="John" message="Welcome to React!" />
+  );
+}
+```
+---
+
+### What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
 - What are `props`?
 - What are `states`?
