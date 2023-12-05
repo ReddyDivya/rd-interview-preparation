@@ -218,6 +218,22 @@ const ChildComponent = (props) => {
   return <p>{props.message}</p>;
 };
 ```
+
+### let's see how destructuring can be applied to make the code more concise
+```
+// With destructuring
+import React from 'react';
+
+const ChildComponent = ({ message }) => {
+  return (
+    <div>
+      <p>{message}</p>
+    </div>
+  );
+};
+
+export default ChildComponent;
+```
 - The ParentComponent passes the message prop to the ChildComponent, which then uses that prop to display the message.
 
 In class components, props are accessed through the `this.props` object. When a component is created, React automatically assigns the props passed to it as attributes of this.props. Here's an example demonstrating how props are used in a class component:
@@ -376,6 +392,8 @@ export default Counter;
 In this example, useState(0) initializes the count state with an initial value of 0. The array destructuring const [count, setCount] is used to capture the current state value (count) and the function to update the state (setCount). The increment function uses setCount to update the state, triggering a re-render with the updated value.
 
 ---
+
+
 ### What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
 - What are `props`?
