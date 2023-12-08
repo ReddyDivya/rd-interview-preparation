@@ -519,7 +519,7 @@ In this example, each <li> element has a key attribute with a unique identifier 
 
 ---
 
-### Build an `Image Slider`, which automatically slides after every 5 seconds?
+## Q: Build an `Image Slider`, which automatically slides after every 5 seconds?
 A: We can do it using `setTimeOut` for that we require `useEffect` hook. React has a Render cycle after that useEffect is called. 
 
 ### setIimeOut
@@ -600,6 +600,7 @@ render(dummy data)
   -> render(API data)
   -> HTML render(new API data)
   -> componentDidUpdate() -> `this.setState` -> state variable is updated
+  
 ---
 
 ## Q: Is it a good way to keep data in components like image info?
