@@ -1,4 +1,4 @@
-# React Interview Question and Answers
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/9612d90a-5327-4ca1-b209-b5aa80e609b2)# React Interview Question and Answers
 
 ## Q: How to create a `React Projects`?
 A: `Create React App (CRA)` is a package, more precisely, it's a command-line tool that sets up a new React project with a sensible default configuration.
@@ -489,6 +489,121 @@ A: ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/341811
 ### Optimizing the above code
 ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/88b70faa-04b9-41d5-a110-a84f36530eab)
 
+
+---
+## Q: Why to use the `key` in the map?
+A: `Map` is a data structure that allows us to store `key-value pairs` where each key and value can be of any data type.
+When working with React, using keys in a Map (or more commonly, in React components' lists) is important for several reasons:
+
+### Uniqueness: 
+Keys must be unique within a map or a list of React elements. This uniqueness helps React identify which items have changed, been added, or been removed. This is crucial for React's efficient rendering algorithm, which aims to update only the parts of the DOM that have changed.
+
+### Performance:
+Using keys allows React to efficiently update the DOM by reordering, adding, or removing only the necessary elements. This improves the performance of our React application, especially when dealing with large lists.
+
+### Stability: 
+React uses keys to determine the identity of elements. If the order of elements changes without keys, React might mistakenly think that elements have been added or removed, leading to unnecessary re-rendering and potential bugs. Keys provide stability to the identity of elements, helping React correctly identify changes.
+
+```
+function MyComponent({ items }) {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+```
+In this example, each <li> element has a key attribute with a unique identifier (item.id). This helps React efficiently update the list when the items array changes.
+
+---
+
+### Build an `Image Slider`, which automatically slides after every 5 seconds?
+A: We can do it using `setTimeOut` for that we require `useEffect` hook. React has a Render cycle after that useEffect is called. 
+
+### setIimeOut
+The setTimeout function is commonly used to schedule the execution of a function after a specified delay.
+
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/79657126-562d-46ba-8db2-9171f2dafc11)
+
+---
+## Q: What is `useEffect`?
+A: The `useEffect` hook is used to perform side effects in functional components. The useEffect hook takes two arguments: a function that contains the code for the side effect, and an optional dependency array. The dependency array is a crucial part of useEffect, and it serves several purposes.
+
+---
+
+## Q: Why dependency array is required in `useEffect`?
+A: It's important to include the variable in the dependency array. This ensures that the effect is re-run whenever those values change. If we omit the dependency array, the effect might capture stale values and not react to changes.
+
+```
+import React, { useEffect, useState } from 'react';
+
+function MyComponent({ data }) {
+  const [processedData, setProcessedData] = useState([]);
+
+  useEffect(() => {
+    // Perform some side effect with the data
+    const processed = processData(data);
+
+    // Update the state
+    setProcessedData(processed);
+
+    // Cleanup function (executed on unmount)
+    return () => {
+      // Cleanup code here
+    };
+  }, [data]); // Dependency array with 'data'
+
+  return (
+    <div>
+      {/* Render component using processedData */}
+    </div>
+  );
+}
+```
+
+---
+## Q: Why do we need to clear time out?
+A: Whenever a component is unmounting, we need to clear the set timeout. It's a good practice otherwise it leads to several issues. 
+
+The clearTimeout function is used to cancel a timeout that has been previously set with setTimeout. Here are some reasons why clearing timeouts is important:
+
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/e16c3100-426b-42b5-9d01-8b8988a3a79d)
+
+---
+
+## Q: Is cleanup mandatory or optional?
+A: It is mandatory.
+
+## Q: What is Lifecycle?
+A: A lifecycle refers to the various stages that a component or application goes through from mount, update, and unmount.
+
+### React Component Lifecycle in a class component
+
+```
+constructor()
+render()
+componentDidMount()
+componentDidUpdate()
+componentWillUnmount()
+```
+
+### 1. Mount Phase
+constructor()
+render(dummy data)
+  -> HTML render(with dummy data)
+  -> API Calls
+  -> `this.setState` -> state variable is updated
+
+### 2. Update Phase
+  -> render(API data)
+  -> HTML render(new API data)
+  -> componentDidUpdate() -> `this.setState` -> state variable is updated
+---
+
+## Q: Is it a good way to keep data in components like image info?
+A: No, it's not a good practice to keep in a component directly. We should keep all in a constant file.
 
 ---
 
