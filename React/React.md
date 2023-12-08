@@ -1,4 +1,4 @@
-![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/9612d90a-5327-4ca1-b209-b5aa80e609b2)# React Interview Question and Answers
+React Interview Question and Answers
 
 ## Q: How to create a `React Projects`?
 A: `Create React App (CRA)` is a package, more precisely, it's a command-line tool that sets up a new React project with a sensible default configuration.
