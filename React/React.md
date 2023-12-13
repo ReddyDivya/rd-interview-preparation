@@ -607,6 +607,172 @@ render(dummy data)
 A: No, it's not a good practice to keep in a component directly. We should keep all in a constant file.
 
 ---
+## 28Q: What is `Context API`?
+A:
+
+---
+
+## 29Q: What is the difference between `Controlled components` and `UnControlled components`?
+A:
+
+---
+
+## 30Q: What are the advantages of using `React Hooks`?
+A:
+
+---
+
+## 31Q: What is the use of `key in React JS`?
+A: 
+
+---
+
+## 32Q: What is `HOC with an example`?
+A:
+
+---
+
+## 33Q: What is the difference between `Real DOM` and `Virtual DOM`?
+A:
+
+---
+
+## 34Q: What is `useMemo`?
+A:
+
+---
+
+## 35Q: What is `useContext`?
+A:
+
+---
+
+## 36Q: When to use `useContext` and `Redux`?
+A:
+
+---
+
+## 37Q: What is `Hoisting`?
+A:
+
+---
+
+## 38Q: What is the output of the below code snippets?
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/df06ac96-f77a-4c36-8410-e3e81010d9bc)
+
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/3dcc5d6f-dc12-491b-bd80-58515652de3b)
+ 
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/76bcf30c-5e8c-4a95-9342-73ba753da470)
+
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/eba640c0-32ce-4bf3-9784-9d979086a255)
+
+---
+
+## 39Q: What are the `features of React`?
+A: 
+
+---
+
+## 40Q: Is `React faster than the Angular`?
+A:
+
+---
+
+## 41Q: Why React is a `One-way data binding`?
+A:
+
+---
+
+## 42Q: What is `Babel`?
+A:
+
+---
+
+## 43Q: Is React a framework or library?
+A:
+
+---
+
+## 44Q: What is the use of `ES6`?
+A:
+
+---
+
+## 45Q: What are the different parts of components?
+A: Function, class components
+
+---
+
+## 46Q: Which one is better `Function Components` and `Class Components`?
+A:
+
+---
+
+## 47Q: What is `Node JS`?
+A:
+
+---
+
+## 48Q: What is `Prop drilling`?
+A:
+
+---
+
+## 49Q: Can we create `Custom Hooks`. Did you use it anytime??
+A: 
+
+---
+
+## 50Q: What is `React strict Mode`?
+A:
+
+---
+
+## 51Q: How to pass data between components and which one is better?
+A: props, context API, Redux, callback functions
+
+---
+
+## 52Q: How does `Routing` work?
+A:
+
+---
+
+## 53Q: How to `add Redux to our React project`? 
+A:
+
+---
+
+## 54Q: Explain hooks other than useState and useEffect?
+A: useRef, useReducer
+
+
+---
+
+## 55Q: Why do we write `console.log`?
+A: `Environment Variable`
+```
+if (process.env.NODE_ENV === 'development') {
+    console.log("This will only be logged in development mode");
+}
+```
+In a production environment, the NODE_ENV is usually set to 'production', so these logs won't appear.
+
+---
+
+## 56Q: If we have several `console.log` in our application and want to enable or disable it whenever we want. How do we achieve it?
+A: Common function
+
+
+
+## 46Q: 
+
+
+
+
+
+
+---
 
 ## 28Q: What is `class components`?
 - How to `create components` i.e `Functional`, `Class`?
