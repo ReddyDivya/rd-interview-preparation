@@ -1,32 +1,147 @@
 # JavaScript Interview Questions and Answers
 
 ## 1Q: What is `Hoisting`?
-A: `Hoisting` is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase. This means that you can use variables and functions before they are declared in our code.
+A: `Hoisting` is a JavaScript behavior in which variable and function declarations are moved to the top of their containing scope during the compilation phase. This means that you can use variables and functions in your code before they are formally declared. However, it's important to note that while declarations are hoisted, initializations are not.
 
-It's important to note that while the declarations are hoisted, the initializations (assignment of values) are not. This means that if you try to use a variable before it's assigned a value, you'll get undefined. For functions, the entire function declaration is hoisted, allowing you to call the function before its actual declaration in the code.
+Here are two key aspects of hoisting:
 
-Here's a basic example to illustrate hoisting:
+### Variable Hoisting:
+
+- Variable declarations using var are hoisted to the top of their scope.
+- Only the declaration is hoisted, not the initialization.
+- If a variable is used before it is declared, it will have the value undefined.
 
 ```
-// Example 1: Variable Hoisting
-console.log(x); // Outputs: undefined
+console.log(x); // undefined
 var x = 5;
+```
 
-// Example 2: Function Hoisting
-foo(); // Outputs: "Hello, hoisting!"
+In this example, the var x declaration is hoisted to the top, but the assignment (x = 5) remains in place. The console.log statement prints undefined because the assignment has not occurred yet.
+
+### Function Hoisting:
+
+- Function declarations are hoisted in their entirety.
+- This includes both the function name and its implementation.
+- You can call a function before its declaration in the code.
+
+```
+foo(); // "Hello, hoisting!"
 function foo() {
   console.log("Hello, hoisting!");
 }
-
-// Example 3: Hoisting with Let and Const
-console.log(y); // ReferenceError: y is not defined
-let y = 10;
 ```
+
+Here, the function foo is hoisted, so calling it before the declaration is valid.
+
+It's important to distinguish between var, let, and const when it comes to hoisting:
+
+- With var, both the declaration and initialization are hoisted.
+- With let and const, hoisting occurs, but the variable is not initialized until the actual declaration is encountered in the code. Attempting to access a let or const variable before its declaration results in a ReferenceError.
+
+```
+console.log(a); // ReferenceError: a is not defined
+let a = 10;
+```
+
+In modern JavaScript, it's a good practice to use let and const for variable declarations to avoid some of the unexpected behaviors associated with var hoisting. Functions, on the other hand, are typically hoisted in a predictable manner regardless of the type of declaration.
 
 ---
 
 ## 2Q: What is the use of `ES6`?
-A:
+A: ECMAScript 2015 (ES6) is a significant update to the JavaScript language specification, bringing many new features and enhancements to the language. The primary goals of ES6 are to make JavaScript more expressive, readable, and scalable for large and complex applications. Here are some key features and use cases of ES6:
+
+### 1. let and const Declarations:
+
+ES6 introduced the let and const keywords for declaring variables. let allows block-scoped variables, and const is used for declaring constants.
+```
+let x = 10;
+const PI = 3.14159;
+```
+
+### 2. Arrow Functions:
+
+Arrow functions provide a more concise syntax for writing functions. They automatically bind to the surrounding this value and have implicit return for one-liner functions.
+
+```
+const add = (a, b) => a + b;
+```
+
+### 3. Template Literals:
+
+Template literals allow the interpolation of variables and expressions within strings using backticks (`).
+
+```
+const name = 'World';
+const greeting = `Hello, ${name}!`;
+```
+
+### 4. Destructuring Assignment:
+
+Destructuring assignment allows you to extract values from arrays or objects and assign them to variables in a concise way.
+
+```
+const person = { name: 'John', age: 30 };
+const { name, age } = person;
+```
+
+### 5. Spread and Rest Operators:
+
+The spread (...) operator is used for array and object spreading, while the rest operator is used for collecting the remaining elements into a single variable.
+
+```
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+```
+
+### 6. Classes:
+
+ES6 introduced a class syntax for defining constructor functions and creating objects, providing a more familiar and structured way to work with prototypes.
+
+```
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+```
+
+### 7. Promises:
+
+Promises provide a cleaner and more readable way to work with asynchronous code, making it easier to reason about and handle errors.
+
+```
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    // Asynchronous operation
+    if (success) {
+      resolve(data);
+    } else {
+      reject(error);
+    }
+  });
+};
+```
+
+### 8. Modules:
+
+ES6 introduced a modular system for organizing and managing code. Modules allow developers to encapsulate code in separate files and import/export functionality.
+
+```
+// module.js
+export const add = (a, b) => a + b;
+
+// main.js
+import { add } from './module';
+```
+
+### 9. 
+
+
+
+
 
 ---
 
