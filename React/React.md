@@ -1073,12 +1073,7 @@ In summary, use useContext when we have simpler state management needs, especial
 
 ---
 
-## 37Q: What is `Hoisting`?
-A:
-
----
-
-## 38Q: What is the output of the below code snippets?
+## 37Q: What is the output of the below code snippets?
 ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/df06ac96-f77a-4c36-8410-e3e81010d9bc)
 
 ![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/3dcc5d6f-dc12-491b-bd80-58515652de3b)
@@ -1089,236 +1084,104 @@ A:
 
 ---
 
-## 39Q: What are the `features of React`?
+## 38Q: What are the `features of React`?
 A: 
 
 ---
 
-## 40Q: Is `React faster than the Angular`?
+## 39Q: Is `React faster than the Angular`?
 A:
 
 ---
 
-## 41Q: Why React is a `One-way data binding`?
+## 40Q: Why React is a `One-way data binding`?
 A:
 
 ---
 
-## 42Q: What is `Babel`?
+## 41Q: What is `Babel`?
 A:
 
 ---
 
-## 43Q: Is React a framework or library?
+## 42Q: Is React a framework or library?
 A:
 
 ---
 
-## 44Q: What is the use of `ES6`?
-A:
-
----
-
-## 45Q: What are the different parts of components?
+## 43Q: What are the different parts of components?
 A: Function, class components
 
 ---
 
-## 46Q: Which one is better `Function Components` and `Class Components`?
+## 44Q: Which one is better `Function Components` and `Class Components`?
 A:
 
 ---
 
-## 47Q: What is `Node JS`?
+## 45Q: What is `Node JS`?
 A:
 
 ---
 
-## 48Q: What is `Prop drilling`?
+## 46Q: What is `Prop drilling`?
 A:
 
 ---
 
-## 49Q: Can we create `Custom Hooks`. Did you use it anytime??
+## 47Q: Can we create `Custom Hooks`. Did you use it anytime??
 A: 
 
 ---
 
-## 50Q: What is `React strict Mode`?
+## 48Q: What is `React strict Mode`?
 A:
 
 ---
 
-## 51Q: How to pass data between components and which one is better?
+## 50Q: How to pass data between components and which one is better?
 A: props, context API, Redux, callback functions
 
 ---
 
-## 52Q: How does `Routing` work?
+## 51Q: How does `Routing` work?
 A:
 
 ---
 
-## 53Q: How to `add Redux to our React project`? 
+## 52Q: How to `add Redux to our React project`? 
 A:
 
 ---
 
-## 54Q: Explain hooks other than useState and useEffect?
+## 53Q: Explain hooks other than useState and useEffect?
 A: useRef, useReducer
 
 
 ---
 
-## 55Q: Why do we write `console.log`?
-A: `Environment Variable`
-```
-if (process.env.NODE_ENV === 'development') {
-    console.log("This will only be logged in development mode");
-}
-```
-In a production environment, the NODE_ENV is usually set to 'production', so these logs won't appear.
 
----
-
-## 56Q: If we have several `console.log` in our application and want to enable or disable it whenever we want. How do we achieve it?
-A: Common function
-
----
-
-## 57Q: What is `Doctype` in HTML and Does it make any difference when we don't mention it?
+## 54Q: Explain `React JS`.
 A: 
 
 ---
 
-## 58Q: What is the difference between `CSS` and `CSS3`?
+## 55Q: What is `Hooks`?
 A:
 
 ---
 
-## 59Q: What is `ECMAScript`?
+## 56Q: Is `props` the best way to pass the data throughout the components or Are there any other ways to do it?
 A:
 
 ---
 
-## 60Q: What is the difference between `var`, `let`, and `const`?
+## 57Q: What is a `Middleware`?
 A:
 
 ---
 
-## 61Q: If I have variables that are not going to be modified throughout the application, where can I use `var` or `const` to employ them wherever they're required? How will it affect speed and performance? 
-A: 
-### Readability and Intent:
-const explicitly communicates that the variable won't be reassigned. This can make your code more readable and help other developers understand your intentions.
-Using var for variables that won't be modified can be confusing because it implies the variable could be reassigned later in the code.
-
-### Scope:
-const has block scope, which means it is limited to the block in which it is declared. This can help prevent unintended variable hoisting or scope-related issues.
-var has function scope, and it is hoisted to the top of the function or global scope, which can sometimes lead to unexpected behavior.
-
-### Maintainability:
-const helps prevent accidental reassignment, reducing the chances of introducing bugs when maintaining or updating your code.
-
-Regarding performance, the use of var or const for variables that won't be modified is unlikely to have a significant impact on the overall performance of your application. Modern JavaScript engines are highly optimized and can handle both declarations efficiently.
-
-However, it's worth noting that the use of const may lead to better optimizations in some cases. Since const indicates that a variable won't be reassigned, the engine may be able to make certain optimizations during compilation.
-
-In summary, for variables that won't be modified, it's a good practice to use const for its clarity, readability, and the additional benefits it provides in terms of preventing accidental reassignment and potential optimizations.
-
----
-
-## 62Q: What is a `Spread Operator`?
-A: 
-
----
-
-## 63Q: What is `Arrow Function`?
-A:
-
----
-
-## 64Q: What is `setTimeOut` and `setInterval`?
-A:
-
----
-
-## 65Q: How do you `stop setInterval after some intervals`, How do you achieve it?
-A: To stop a setInterval after a certain number of intervals or after a specific duration, you can use the clearInterval function. The setInterval function returns an interval ID, which you can pass to clearInterval to stop the interval. 
-Here's an example:
-```
-// Set up a setInterval and store the interval ID
-const intervalId = setInterval(function() {
-    // Code to be executed at each interval
-
-    // Check a condition to determine when to stop the interval
-    if (someCondition) {
-        // Stop the interval when the condition is met
-        clearInterval(intervalId);
-    }
-}, intervalDuration);
-```
-## 66Q: Write a program to find the highest number of occurrences in an array and the number of times it occurred in the array `[1, 1, 2, 3, 1, 4]`?
-A: 
-```
-const findHighestOccur = (arr) => {
-    const count = {};
-
-    for (const element of arr) {
-        if (count[element]) {
-            count[element] += 1;
-        } else {
-            count[element] = 1;
-        }
-    }
-
-    let maxElement;
-    let maxOccurrence = 0;
-
-    for (const element in count) {
-        if (count[element] > maxOccurrence) {
-            maxElement = element;
-            maxOccurrence = count[element];
-        }
-    }
-
-    return { maxElement, maxOccurrence };
-};
-
-console.log(findHighestOccur([1, 1, 2, 3, 1, 4])); //{maxElement: "1", maxOccurrence: 3}
-console.log(findHighestOccur([2, 3, 1, 4, 2, 2, 3, 3, 2]));//{maxElement: "2", maxOccurrence: 4}
-```
-
-- I added the logic to find the element with the highest occurrence.
-- 
-- I used a for...in loop to iterate over the properties of the count object.
-- 
-- The function now returns an object with maxElement and maxOccurrence.
-- 
-- The console.log statement will log the result of the function.
-
----
-
-## 67Q: Explain `React JS`.
-A: 
-
----
-
-## 68Q: What is `Hooks`?
-A:
-
----
-
-## 69Q: Is `props` the best way to pass the data throughout the components or Are there any other ways to do it?
-A:
-
----
-
-## 70Q: What is a `Middleware`?
-A:
-
----
-
-## 71Q: 
+## 58Q: 
 
 
 
@@ -1328,9 +1191,6 @@ A:
 ---
 
 ## 28Q: What is `class components`?
-- How to `create components` i.e `Functional`, `Class`?
-- What are `props`?
-- What are `states`?
 - What is `context`?
 - How do you `conditionally Render the component`?
 
