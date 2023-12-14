@@ -137,20 +137,89 @@ export const add = (a, b) => a + b;
 import { add } from './module';
 ```
 
-### 9. 
+### 9. Default Parameters:
 
+ES6 allows you to assign default values to function parameters, simplifying the handling of missing or undefined values.
 
+```
+const greet = (name = 'Guest') => `Hello, ${name}!`;
+```
 
+### 10. Symbol and Iterators:
 
+Symbols provide a way to create unique identifiers, and iterators allow you to define custom iteration behavior for objects.
+
+```
+const mySymbol = Symbol('mySymbol');
+const iterableObject = {
+  [mySymbol]: 'Hello',
+  [Symbol.iterator]() {
+    // Custom iterator logic
+  }
+};
+```
+
+These features, among others introduced in ES6, contribute to improving the overall readability, maintainability, and expressiveness of JavaScript code. As a result, developers can write more efficient and structured code, making it easier to build and maintain large-scale applications.
 
 ---
 
 ## 3Q: Why do we write `console.log`?
-A: 
+A: `console.log` is a function in JavaScript that is commonly used for debugging and logging information to the console. It allows developers to print messages, variables, or other data to the console, which can be viewed in the browser's developer tools or other JavaScript environments.
+
+Here are some common use cases for console.log:
+
+### Debugging:
+Developers use console.log statements to print the values of variables or objects during development. This helps in understanding the flow of the program and identifying potential issues.
+
+```
+let x = 10;
+console.log('The value of x is:', x);
+```
+
+### Checking Code Execution:
+Developers use console.log to check if a particular part of the code is executed or to trace the sequence of function calls.
+```
+function myFunction() {
+  console.log('myFunction is called');
+  // Other code logic
+}
+```
+
+### Inspecting Objects:
+console.log is frequently used to inspect the properties and values of objects.
+```
+const person = { name: 'John', age: 30 };
+console.log('Person:', person);
+```
+
+### Logging Error Messages:
+When an error occurs, developers often use console.log to print relevant information about the error, helping in the debugging process.
+
+```
+try {
+  // Some code that may throw an error
+} catch (error) {
+  console.log('Error:', error.message);
+}
+```
+
+### Logging Messages for Users:
+In some cases, developers use console.log to provide informative messages to users, especially during development.
+
+```
+console.log('Welcome to the application!');
+```
+
+It's important to note that console.log is a debugging tool and should not be left in the production code, as it can impact performance and may expose sensitive information. In production, developers often use more sophisticated logging libraries or disable logging statements.
+
+Other console methods, such as console.warn, console.error, and console.info, provide additional functionality for different types of messages and can be useful in different debugging scenarios.
+
 ---
 
 ## 4Q: If we have several `console.log` in our application and want to enable or disable it whenever we want. How do we achieve it?
-A: `Environment Variable`
+A: 
+
+### 1. Environment Variable
 
 ```
 if (process.env.NODE_ENV === 'development') {
@@ -160,10 +229,83 @@ if (process.env.NODE_ENV === 'development') {
 
 In a production environment, the NODE_ENV is usually set to 'production', so these logs won't appear.
 
+### 2. Configuration
+
+To enable or disable console.log statements selectively in your application, you can use a conditional check or wrap your logging statements within a function that you can control based on a configuration or environment variable. This way, you can easily toggle logging on or off as needed. 
+Here's an example using a configuration flag:
+```
+// Configuration flag to control logging
+const enableLogging = true;
+
+// Function to conditionally log messages
+const customLog = (message) => {
+  if (enableLogging) {
+    console.log(message);
+  }
+};
+
+// Example usage
+customLog('This message will be logged.');
+
+// To disable logging, set enableLogging to false
+// const enableLogging = false;
+// customLog('This message will not be logged.');
+```
+
+In this example:
+
+The enableLogging variable is used as a configuration flag. Setting it to true enables logging, while setting it to false disables logging.
+
+The customLog function checks the value of enableLogging before calling console.log. If enableLogging is false, the log statement is skipped.
+
+When you want to disable logging, you can set enableLogging to false.
+
+This approach allows you to have fine-grained control over logging in your application. You can also use environment variables or other configuration mechanisms to control logging behavior based on different environments (e.g., development, production).
+
+Alternatively, you can consider using a dedicated logging library that provides more advanced features, such as different log levels (info, warn, error) and centralized logging. Libraries like winston or log4js provide configurable logging options and can be more suitable for larger applications.
+
 ---
 
 ## 5Q: What is `Doctype` in HTML and Does it make any difference when we don't mention it?
-A: 
+A: DOCTYPE (Document Type Declaration) is an instruction or preamble specified in HTML and XML documents to tell browsers which version of the HTML or XML standard the document is following. It is not an HTML tag but rather a declaration placed at the very beginning of an HTML document.
+
+The DOCTYPE declaration is used to define the document type and version, and it helps browsers render the document correctly. It also influences the browser's rendering mode, determining whether the browser should render the document in standards mode, quirks mode, or almost standards mode.
+
+Here is an example of a typical DOCTYPE declaration for HTML5:
+
+```
+<!DOCTYPE html>
+```
+
+In HTML5, this declaration is quite simple and is usually sufficient for most modern web development. For older versions of HTML, the DOCTYPE declaration can be more complex.
+
+### Importance of DOCTYPE:
+
+### 1. Rendering Mode:
+
+The presence of a DOCTYPE declaration affects the rendering mode of the browser. It helps the browser determine whether to render the document in standards mode or quirks mode. Standards mode is preferable for consistent rendering across browsers.
+
+### 2. Layout and Box Model:
+
+Different rendering modes may affect how elements are sized and spaced (the box model) in the document. Standards-compliant browsers adhere to a consistent box model, while quirks mode may use a different box model.
+
+### 3. Compatibility:
+
+Including a DOCTYPE declaration is considered good practice for ensuring cross-browser compatibility. It helps avoid inconsistencies in rendering across different browsers.
+
+### Impact of Omitting DOCTYPE:
+### Quirks Mode:
+
+If you omit the DOCTYPE declaration, or if it is incorrect, browsers may default to quirks mode. In quirks mode, the browser may use an older, less strict rendering mode, potentially causing layout and styling inconsistencies.
+
+### Compatibility Issues:
+
+Omitting the DOCTYPE may lead to compatibility issues, especially when using newer HTML or CSS features. Different browsers may interpret the document differently, resulting in unpredictable behavior.
+
+### Validation:
+
+A valid DOCTYPE declaration is part of the HTML standard, and adhering to standards helps ensure that your HTML code is valid. Some tools and validators may flag documents without a proper DOCTYPE as potentially problematic.
+While modern web development often uses HTML5 and includes a simple DOCTYPE declaration, omitting it may not necessarily break your website. However, it's considered a best practice to include a DOCTYPE to ensure consistent rendering across browsers and to adhere to web standards. Always strive to write well-formed and standards-compliant HTML.
 
 ---
 
