@@ -543,6 +543,7 @@ A:  A Closures occur when a function is defined inside another function and has 
 Closure => function + lexical scope
 ```
 
+
 ### Example 1
 
 ```
@@ -567,6 +568,7 @@ closureFunction(); // Outputs: "I am from the outer function"
 - When outerFunction is invoked, it returns innerFunction, creating a closure
 - The closure closureFunction retains access to outerVariable even after outerFunction has finished executing. When closureFunction is invoked later, it still has access to the outerVariable and logs its value. This encapsulation of variables is a fundamental aspect of closures in JavaScript.
 
+
 ### Example 2: Counter Using Closure
 
 ```
@@ -586,6 +588,8 @@ console.log(counter()); // Outputs: 3
 
 ### Exaplanation
 In this example, createCounter returns a function that, when invoked, increments and returns the count variable. The closure keeps track of the state (the value of count) even though createCounter has finished executing.
+
+
 
 ### Example 3: Data Encapsulation
 
@@ -618,6 +622,8 @@ console.log(john.getAge()); // Outputs: 30
 ### Explanation
 Here, the `person` function returns an object with methods to interact with private variables (name and age). The closure maintains access to the name and age variables even after person has completed execution.
 
+
+
 ### Example 4: Callbacks and Asynchronous Operations
 ```
 function fetchData(url, callback) {
@@ -637,6 +643,8 @@ fetchData("https://api.example.com/data", processData);
 ### Explanation
 
 In this example, `fetchData` is a function that fetches data from a URL and calls the provided `callback (processData)` with the retrieved data. The callback has access to the data variable due to the closure, allowing it to work with the fetched data even though it's called asynchronously.
+
+
 
 ### Example 5: Timer Using Closure
 ```
