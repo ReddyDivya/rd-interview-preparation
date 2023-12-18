@@ -645,7 +645,6 @@ fetchData("https://api.example.com/data", processData);
 In this example, `fetchData` is a function that fetches data from a URL and calls the provided `callback (processData)` with the retrieved data. The callback has access to the data variable due to the closure, allowing it to work with the fetched data even though it's called asynchronously.
 
 
-
 ### Example 5: Timer Using Closure
 ```
 function createTimer(delay) {
@@ -682,6 +681,102 @@ setTimeout(() => {
 In this example, the `createTimer` function returns an object with `start` and `stop` methods. The start method uses setInterval to invoke the `updateTimer` function at regular intervals, and stop uses `clearInterval` to stop the timer. The closure maintains access to the seconds variable, allowing it to persist across multiple invocations of updateTimer. This demonstrates how closures can be used to encapsulate state and functionality in scenarios like timers.
 
 ---
+## 16Q: Guess the output of the JS code snippet
+  ```
+  let a = a+1;
+  console.log(a)
+  ```
+A:   
+```
+VM115:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:9
+```
 
+## 17Q: Why is `JSONP` used?
+A: JSONP (JSON with Padding) is used as a technique for making cross-origin requests in web development. It is primarily used when a web page hosted on one domain wants to make a request for data to a server on a different domain. JSONP is an alternative to the XMLHttpRequest object or the Fetch API, which are subject to the same-origin policy, meaning they cannot make requests to a different domain than the one that served the web page.
 
+Here are a few key reasons why JSONP is used:
 
+### Cross-Origin Requests:
+The same-origin policy in web browsers restricts web pages from making requests to a different domain than the one that served the web page. JSONP is a workaround for this limitation, as it allows cross-origin requests by dynamically adding script tags to the DOM, which are not subject to the same-origin policy.
+
+### Support for Old Browsers:
+JSONP is an older technique and has been used historically when support for modern alternatives like Cross-Origin Resource Sharing (CORS) wasn't widespread. JSONP is compatible with older browsers that may not fully support CORS.
+
+---
+
+## 17Q: Guess the output of the JS code snippet
+```
+console.log(typeof typeof 42)
+```
+A: string
+
+### Here's the breakdown:
+
+`typeof 42` returns 'number' because 42 is a number.
+Then, typeof 'number' returns 'string' because the typeof operator returns a string indicating the type of the operand.
+So, the overall expression is equivalent to typeof 'number', which results in the output 'string'.
+
+---
+
+## 18Q: Guess the output of the JS code snippet
+```
+var arr = [1, 2, 3, 4]
+var vArr = arr.concat([5]);
+alert(arr.length)
+alert(vArr.length)
+```
+A: 
+### Output
+```
+4
+5
+```
+---
+
+## 19Q: To refresh a webpage using JavaScript
+A: We can use the `location.reload()` method. This method reloads the current URL, effectively refreshing the page. 
+
+Here's an example:
+
+```
+// Refresh the page after 2000 milliseconds (2 seconds)
+setTimeout(function() {
+  location.reload();
+}, 2000);
+```
+
+- In this example, `setTimeout` is used to delay the page refresh by 2000 milliseconds (2 seconds). 
+- If we want an immediate refresh, we can call `location.reload()` without using setTimeout:
+
+```
+// Refresh the page immediately
+location.reload();
+```
+
+Remember that automatically refreshing a page can be disruptive to the user experience, so it's essential to use this feature judiciously and considerate of the user's expectations.
+
+---
+
+## 20Q: Guess the output of the JS code snippet
+```
+function varTest()
+{
+  var x = 31;
+  if(true)
+  {
+    var x = 71;
+    console.log(x);
+  }
+  console.log(x);
+}//varTest
+```
+A: 
+### Output
+```
+71
+31
+```
+---
+
+## 21Q:
