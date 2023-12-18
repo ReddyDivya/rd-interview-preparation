@@ -1530,13 +1530,55 @@ Keep in mind that using shouldComponentUpdate requires careful consideration, as
 
 ---
 
+## 59Q: Which helps react for keeping their data `unidirectional`?
+A:  React enforces the concept of "unidirectional data flow" to maintain a clear and predictable flow of data through a React application. This unidirectional flow ensures that data changes are explicit and traceable, making it easier to understand and debug application behavior. There are a few key principles and features in 
 
+React that contribute to achieving unidirectional data flow:
 
+### State and Props:
 
+`State`: Data that can change within a component is managed using the component's state. The state is internal to the component and can be updated using setState.
+`Props`: Data that is passed from a parent component to a child component is done through props. Props are read-only and cannot be modified by the child component.
+One-way Data Binding:
 
+React uses one-way data binding, meaning that data flows in a single direction—from parent components to child components. This helps in understanding where the data originates and how it propagates through the component hierarchy.
 
+### Top-Down Data Flow:
+In a React application, data typically flows from parent components to child components. When a parent component's state changes, it triggers a re-render in the parent, which then passes updated props down to its children. This top-down flow ensures a clear direction for data changes.
+
+### Immutable Data and Immutability:
+React encourages the use of immutable data structures. Instead of modifying the existing state, create a new copy with the desired changes. This prevents unexpected side effects and makes it easier to reason about the application's state.
+
+### Redux (or Other State Management Libraries):
+Libraries like Redux are often used to manage application state in a centralized store. This helps in maintaining a single source of truth for the entire application's state and ensures that state changes are handled consistently.
+By adhering to these principles and features, React promotes a unidirectional flow of data that makes it easier to understand, debug, and maintain large-scale applications. The unidirectional flow also contributes to the stability and predictability of React applications.
 
 ---
+
+## 60Q: Guess the output of the React
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/32d6dd56-8f86-400c-8309-92b35231d946)
+
+### Options
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/51a3652c-beb5-4748-b6c8-b79d7a9e5622)
+
+A: 
+
+---
+
+## 61Q: Guess the output of the React
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/18f87768-04a3-4167-bfa5-52863321ac17)
+A:
+
+---
+
+## 62Q: Guess the output of the React
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/32605e02-db4a-4a9b-a299-8f1cb1b8cbf1)
+A:
+
+---
+
+
+
 
 ## 28Q: What is `class components`?
 - What is `context`?
