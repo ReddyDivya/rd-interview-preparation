@@ -1577,6 +1577,23 @@ A:
 
 ---
 
+## 63Q: How can we add `CSS` and `JavaScript` globally in React JS?
+A: 
+
+---
+
+## 64Q: Create `button` using `createElement` and give an `id` to it?
+A:
+
+---
+
+## 65Q: `www.google.com/45/?id=89`, this is the domain and we have query and params in it. Write the function to get params and query 
+A:
+
+---
+
+## 66Q: 
+
 
 
 
