@@ -1055,16 +1055,192 @@ A:
 
 ---
 
+## 29Q: Guess the output of the code snippet
+```
+let c = {greeting : 'hey'};
+let d;
 
+d = c;
+c.greeting = 'hello!';
 
+console.log(d.greeting);
+```
+A: 
+### Explanation
 
+In the provided code snippet, c and d are both references to the same object. When you assign d = c;, you are not creating a new object; instead, both c and d point to the same object in memory. Therefore, modifying the object through one reference affects both references. Here's a step-by-step explanation:
 
+### Output
+```
+hello!
+```
 
+---
 
+## 30Q: Which one is true?
+```
+const bird = {
+  size : 'small'
+}
 
+const mouse = {
+  name:'Mickey',
+  small: true
+}
+```
+A: Both objects (bird and mouse) are considered truthy in JavaScript because they are non-empty objects.
 
+---
 
+## 31Q: What is the output?
+```
+const person = {name : 'Lydia'};
+Object.defineProperty(person, 'age', {value : 21});
 
+console.log(person);
+console.log(Object.keys(person));
+```
+### Output
 
+```
+{ name: 'Lydia', age: 21 }
+[ 'name', 'age' ]
+```
 
+### Explanation
 
+- The person object is defined with the property `name set to Lydia`.
+
+- `Object.defineProperty` is used to add a new property age to the person object with the value 21.
+
+- The first console.log(person) outputs the entire modified person object, which now includes the age property.
+
+- The second console.log(Object.keys(person)) outputs an array of the enumerable property names of the person object, which are 'name' and 'age'.
+
+---
+
+## 32Q: Guess the output
+```
+const myPromise = () => Promise.resolve('I have resolved');
+
+function firstFun() {
+  // Using the then method to handle the resolved value
+  myPromise().then(res => console.log(res));
+  console.log('second');
+}
+
+async function secondFun() {
+  // Using async/await to handle the resolved value
+  console.log(await myPromise());
+  console.log('second');
+}
+
+// Calling the first function
+firstFun();
+
+// Calling the second function
+secondFun();
+
+```
+
+### Output
+```
+second
+I have resolved
+second
+I have resolved
+```
+
+### Explanation
+
+firstFun Function:
+
+1. `Calls myPromise()` and uses the then method to handle the resolved value asynchronously.
+Logs 'second' to the console immediately after initiating the promise.
+secondFun Function:
+
+2. `Uses the async/await` syntax to handle the resolved value of the promise.
+Logs 'second' to the console immediately after initiating the promise.
+
+3. `Calling the Functions`:
+When firstFun is called, 'second' is logged before the resolved value of the promise.
+When secondFun is called, the resolved value is logged first due to the await keyword, and then 'second' is logged.
+
+In both cases, 'second' is logged to the console before or after the resolution of the promise, depending on whether the promise is handled using then or async/await. The order of execution is affected by the asynchronous nature of promises and the event loop in JavaScript.
+
+---
+
+## 33Q: Guess the output
+
+### Using 'var'
+```
+for(var i=0; i<3; i++)
+{
+  setTimeout(() => console.log(i), 1);
+}
+```
+
+### Output
+```
+3
+3
+3
+```
+
+### Explanation:
+
+With `var`, there is only one variable i that is shared across the entire function scope. Due to the asynchronous nature of setTimeout, when the callbacks are executed, they all reference the same i after the loop has completed, resulting in the same value being logged three times:
+
+### Using 'let'
+```
+for(let i=0; i<3; i++)
+{
+  setTimeout(() => console.log(i), 1);
+}
+```
+
+### Explanation:
+
+With let, a new variable i is created for each iteration of the loop, creating a closure for each setTimeout callback. This captures the value of i at the time the callback is created, resulting in the expected output:
+
+### Output
+```
+0
+1
+2
+```
+
+---
+
+## 34Q: Guess the output
+```
+const foo = () => console.log('First');
+const bar = () => setTimeout(() => console.log('First'));
+const baz = () => console.log('Third');
+
+bar();
+foo();
+baz();
+```
+
+### Explanation
+
+- `bar()` schedules a setTimeout callback, but it doesn't immediately log anything. The callback logs 'Second' after a delay specified in setTimeout.
+
+- `foo()` logs 'First' immediately.
+
+- `baz()` logs 'Third' immediately.
+
+### Output
+
+```
+First
+Third
+Second
+```
+The order is determined by the synchronous execution of foo() and baz() and the asynchronous nature of setTimeout in bar(). The setTimeout callback in bar() is pushed to the callback queue and executed after the current synchronous code has completed.
+
+---
+
+## 35Q: Guess the output
+A: 
