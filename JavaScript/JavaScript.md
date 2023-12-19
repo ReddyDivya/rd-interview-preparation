@@ -779,4 +779,203 @@ A:
 ```
 ---
 
-## 21Q:
+## 21Q: Sort an object array in an ascending order `[{name: 'Rahul'}, {name: 'Sameer'}, {name: 'Pinky'}, {name: 'Sonu'}]`
+A: 
+```
+const data = [
+  { name: 'Rahul' },
+  { name: 'Sameer' },
+  { name: 'Pinky' },
+  { name: 'Sonu' },
+];
+
+// Sorting the array in ascending order based on the 'name' property
+const sortedArray = data.sort((a, b) => {
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
+
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  return 0;
+});
+
+console.log(sortedArray);
+```
+In this example, the sort function is used with a custom comparison function. The comparison function takes two objects (a and b) and compares their "name" properties in a case-insensitive manner. The result of the comparison determines the order of the sorted array.
+
+After running this code, sortedArray will contain the objects sorted in ascending order based on the "name" property.
+
+### Method 2: 
+```
+const data = [
+  { name: 'Rahul' },
+  { name: 'Sameer' },
+  { name: 'Pinky' },
+  { name: 'Sonu' },
+];
+
+const sortedArray = data.sort((a, b) => a.name.localeCompare(b.name));
+
+console.log(sortedArray);
+```
+
+---
+
+## 21Q: Guess the output of the code
+```
+const arr = [3, 5, 7];
+arr.foo = 'hello';
+for(let i in arr)
+{
+  console.log(i);
+}
+
+for(let i in arr)
+{
+  console.log(i);
+}
+```
+
+### Output
+
+```
+0
+1
+2
+foo
+0
+1
+2
+foo
+```
+
+## 22Q: for...in loop in JavaScript
+A: The for...in loop in JavaScript is used to iterate over the enumerable properties of an object, including array indices. However, it's important to note that this loop is not recommended for iterating over arrays, as it may also iterate over non-numeric properties.
+
+Here are a couple of examples with the for...in loop along with their expected outputs:
+
+### 1. Iterating over Object Properties
+
+```
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+for (let key in person) {
+  console.log(key + ':', person[key]);
+}
+```
+
+### Output
+
+```
+name: John
+age: 30
+city: New York
+```
+
+In this example, the for...in loop iterates over the properties of the person object, and it logs both the property names (key) and their corresponding values to the console.
+
+### Example 2: Iterating over Array Indices
+```
+const numbers = [1, 2, 3, 4];
+
+for (let index in numbers) {
+  console.log('Index:', index, 'Value:', numbers[index]);
+}
+```
+
+### Output
+
+```
+Index: 0 Value: 1
+Index: 1 Value: 2
+Index: 2 Value: 3
+Index: 3 Value: 4
+```
+In this example, the for...in loop is used to iterate over the indices of the numbers array. It logs both the index and the corresponding value to the console.
+
+### Example 3: Caution with Non-Numeric Properties in Arrays
+```
+const colors = ['red', 'green', 'blue'];
+colors.foo = 'bar';
+
+for (let key in colors) {
+  console.log(key + ':', colors[key]);
+}
+```
+
+### Output
+```
+0: red
+1: green
+2: blue
+foo: bar
+```
+
+In this example, a non-numeric property foo is added to the colors array. The for...in loop iterates over both array indices and additional properties, logging them to the console.
+
+---
+
+## 23Q: Guess the output of the code
+```
+let i;
+for(i=0; i<3; i++)
+{
+  const log = () => {
+    console.log(i);
+  }
+  setTimeout(log, 100)
+}
+
+```
+
+### Output
+```
+3
+3
+3
+```
+
+However, due to the `asynchronous nature of setTimeout`, the value of `i` at the time the `log` function is executed will be the final value after the loop has completed its iterations. This is a common issue when using setTimeout inside a loop.
+
+### Here's what happens step by step:
+
+- The for loop is executed three times, incrementing i from 0 to 2.
+- The setTimeout function is scheduled three times, each with a delay of 100 milliseconds.
+- After the loop completes, the value of i is 3.
+When the setTimeout callbacks execute after the delay, they all log the final value of i, which is 3.
+
+If we want to capture the value of `i` at each iteration, we can use a `block-scoped` variable (e.g., by using let in the loop header) or by creating a closure for each iteration. 
+
+### Here's an example using a closure:
+
+```
+for (let i = 0; i < 3; i++) {
+  const log = (value) => {
+    console.log(value);
+  };
+  setTimeout(() => log(i), 100 * i);
+}
+```
+In this example, the value of i is captured in the closure for each iteration, ensuring that the correct value is logged after the corresponding delay. The setTimeout delay is adjusted to 100 * i to stagger the logging.
+
+--- 
+
+## 24Q: Guess the output of the code snippet
+![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/f1012d7d-9a40-4583-96fd-b171be436104)
+
+A: ### Output
+```
+
+```
+
+
+
+
