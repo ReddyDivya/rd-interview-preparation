@@ -969,13 +969,55 @@ In this example, the value of i is captured in the closure for each iteration, e
 --- 
 
 ## 24Q: Guess the output of the code snippet
-![image](https://github.com/ReddyDivya/rd-interview-preparation/assets/34181144/f1012d7d-9a40-4583-96fd-b171be436104)
+```
+const promise = new Promise(res => res(2))
+promise.then(v => {
+  console.log(v);
+  return v*2;
+})
+.then(v => {
+  console.log(v);
+  return v*2;
+})
+.then(v => {
+  console.log(v);
+})
+```
+A: 
+### Output
+```
+const promise = new Promise(res => res(2));
 
-A: ### Output
+promise
+  .then(v => {
+    console.log(v);   // Output: 2
+    return v * 2;
+  })
+  .then(v => {
+    console.log(v);   // Output: 4
+    return v * 2;
+  })
+  .then(v => {
+    console.log(v);   // Output: 8
+  });
 ```
 
+### Explanation:
+
+- The Promise is created with an immediately resolved value of 2.
+- The first then handler is called when the promise is resolved. It logs the value 2 to the console and returns 2 * 2.
+- The second then handler is called with the value 4 (result of the previous then). It logs 4 to the console and `returns 4 * 2`.
+- The third then handler is called with the value 8 (result of the previous then). It logs 8 to the console.
+
+### Final Output
 ```
+2
+4
+8
+```
+Each then handler in the chain receives the result of the previous one and can perform additional operations on it. This chaining is a key feature of promises, allowing you to write asynchronous code in a more readable and sequential manner.
 
+---
 
-
+## 25Q: 
 
