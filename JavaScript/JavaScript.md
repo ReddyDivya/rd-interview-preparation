@@ -1019,5 +1019,52 @@ Each then handler in the chain receives the result of the previous one and can p
 
 ---
 
-## 25Q: 
+## 25Q: Find minimum value from an array `[10, 2, 4, 9, 20, 40]`
+A: 
+
+### Method 1
+```
+const numbers = [10, 2, 4, 9, 20, 40];
+const minValue = Math.min(...numbers);
+
+console.log("Minimum value:", minValue);
+```
+
+### Method 2
+```
+const numbers = [10, 2, 4, 9, 20, 40];
+const minValue = Math.min.apply(null, numbers);
+
+console.log("Minimum value:", minValue);
+```
+
+---
+
+## 26Q: What is `JavaScript`?
+A: 
+
+---
+
+## 27Q: What is `map`, `filter`, `find`?
+A:
+
+---
+
+## 28Q: What is the difference between `map` and `forEach`
+A:
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
 
