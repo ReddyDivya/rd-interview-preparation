@@ -1238,9 +1238,102 @@ First
 Third
 Second
 ```
-The order is determined by the synchronous execution of foo() and baz() and the asynchronous nature of setTimeout in bar(). The setTimeout callback in bar() is pushed to the callback queue and executed after the current synchronous code has completed.
+The order is determined by the synchronous execution of foo() and baz() and the asynchronous nature of setTimeout in `bar()`. The setTimeout callback in `bar()` is pushed to the callback queue and executed after the current synchronous code has completed.
 
 ---
 
 ## 35Q: Guess the output
 A: 
+```
+String.prototype.giveLeelaPizza = () =>
+{
+  return 'Just give Leela a Pizza'
+}
+
+const name = 'Leela';
+name.giveLeelaPizza();
+```
+
+### Explanation
+
+String.prototype.giveLeelaPizza adds a new method to the prototype of all string objects. This method simply returns the string 'Just give Leela a Pizza'.
+
+`const name = 'Leela';` creates a string variable named name with the value 'Leela'.
+
+`name.giveLeelaPizza();` calls the custom method on the string variable. When you call a method on a primitive value like a string, JavaScript temporarily converts the primitive value to an object (a string object in this case) to access the method. After the method call, it reverts to the primitive value.
+
+The result is logged to the console, which will be the string returned by the giveLeelaPizza method: `Just give Leela a Pizza`.
+
+### Output
+```
+Just give Leela a Pizza
+```
+
+---
+
+## 36Q: How long `cool_secrets` accessible?
+```
+sessionStorage.setItem('cool_secrets', 123);
+```
+
+### Explanation
+
+The `sessionStorage` in JavaScript is a web storage option that allows data to be stored for the duration of the page session. The data stored in sessionStorage is accessible as long as the page or tab is open. When the page is closed or the tab is closed, the data in sessionStorage is cleared.
+
+The item with the key 'cool_secrets' is set to the value 123 in the sessionStorage. As mentioned, this data will persist as long as the page or tab is open. If you close the page or tab, the data will be cleared, and you would need to set it again when the page is reloaded.
+
+Remember that sessionStorage is specific to the page session, and it won't persist across multiple tabs or windows. Each tab or window will have its own separate sessionStorage.
+
+If you want data to persist even when the page is closed and reopened, you might consider using localStorage instead, which has a longer lifespan and persists across sessions.
+
+---
+
+## 37Q: What is the output?
+```
+function getAge(...args) //rest parameters
+{
+  console.log(typeof args);
+}
+
+getAge(21);
+```
+### Output
+
+```
+object
+```
+---
+
+## 38Q: Which of these methods the original array
+```
+const emojis = ['😀', '👑', '💼'];
+
+console.log(emojis.map(x => x + '😀')); // ['😀😀', '👑😀', '💼😀']
+console.log(emojis.filter(x => x !== '👑')); //['😀', '💼']
+console.log(emojis.find(x => x !== '👑')); //😀
+console.log(emojis.reduce((acc, cur) => acc + '😀')); //😀😀😀
+console.log(emojis.slice(1, 2, '😀')); //['👑']
+console.log(emojis.splice(1, 2, '😀')); //['👑', '💼']
+
+```
+
+### Output
+```
+['😀😀', '👑😀', '💼😀'] - This logs a new array where each element is the original emoji followed by '😀'
+['😀', '💼'] - This logs a new array with elements that do not equal '👑'
+😀 - This logs the first element that does not equal '👑', which is '😀'
+😀😀😀 - This logs the result of concatenating '😀' to each element in the array using reduce
+
+//The slice method extracts a section of the array, but it only takes two arguments (start and end indices). The third argument ('😀') is ignored. It logs a new array with the sliced elements:
+['👑']
+
+// The splice method changes the contents of an array by removing or replacing existing elements. It logs an array of removed elements, which are ['👑', '💼'], and modifies the original emojis array by replacing them with '😀'
+['👑', '💼']
+```
+
+---
+
+## 39Q: 
+
+
+
