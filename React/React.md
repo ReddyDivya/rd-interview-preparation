@@ -1597,8 +1597,60 @@ A:
 
 ---
 
-## 67Q:
-## 68Q:
+## 67Q: What is `element` and `component`?
+A:
+
+---
+
+## 68Q: What are `pure components`?
+A:
+
+---
+
+## 69Q: What are `refs`?
+A:
+
+---
+
+## 70Q: What is `forwardRef`?
+A:
+
+---
+
+## 71Q: What are `Interceptors`?
+A:
+
+---
+
+## 72Q: What is `React Fiber`?
+A:
+
+---
+
+## 73Q: What are `Lifecycle methods of React`?
+A:
+
+---
+
+## 74Q: In which case we use `Higher Order Components`?
+A:
+
+---
+
+## 75Q: What is `Lazy Loading`?
+A:
+
+---
+
+## 76Q: How to manage nested routes in terms of role-based routing?
+A:
+
+---
+
+
+
+
+
 
 
 
