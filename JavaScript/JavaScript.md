@@ -1527,3 +1527,90 @@ A:
 
 ---
 
+## 51Q: What are `const with Primitive` and `const with non-primitive`?
+A:
+
+---
+
+## 52Q: What is the output of the code snippet and get output `1, 2 without let`?
+```
+for(var i=1; i<=2; i++)
+{
+  setTimeout(function(){
+    alert(i)
+  }, 100)
+}
+```
+
+---
+
+## 53Q: What is Types of copy(`Shallow copy` and `Deep copy`)?
+A:
+
+---
+
+## 54Q: What is `Prototype` and How it works?
+A:
+
+---
+
+## 55Q: When do we use `bind` vs `call` and `apply`?
+A:
+
+---
+
+## 56Q: Difference between `Spread Operator` and `Rest Operator`?
+A:
+
+---
+
+## 57Q: Get the second last element from the array.
+```
+let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+output: 'e'
+```
+
+### Output
+```
+let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+let secondLastElement = arr[arr.length - 2];
+
+console.log(secondLastElement); // Output: 'e'
+```
+---
+
+## 58Q: What is the output of the code snippet?
+```
+console.log(3+"3");
+console.log(3-"3");
+```
+A: 
+### Output
+```
+33
+0
+```
+### Explanation:
+
+### Example 1: console.log(3 + "3");
+
+The first operand is a number (3).
+The second operand is a string ("3").
+Since one operand is a string, the + operator is used for string concatenation.
+The number 3 is converted to a string, and then the strings are concatenated.
+The result is the string '33'.
+Therefore, console.log(3 + "3"); will output 33.
+
+### Example 2: console.log(3 - "3");
+
+The first operand is a number (3).
+The second operand is a string ("3").
+When the - operator is used, JavaScript tries to convert the string operand to a number.
+The string "3" is converted to the number 3.
+The subtraction is performed as 3 - 3.
+The result is the number 0.
+Therefore, console.log(3 - "3"); will output 0.
+
+---
+
+## 59Q:
