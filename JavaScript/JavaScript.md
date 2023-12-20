@@ -1506,4 +1506,24 @@ console.log(str.replace("Hello", "Hello Divya"));
 ```
 ---
 
-## 46Q: Guess the output of the code snippet?
+## 47Q: What could be the difference between `map` and `filter` for elements returned over 5 from an array in JavaScript?
+A: 
+
+
+---
+
+## 48Q: What is `optional chaining`?
+A: 
+
+---
+
+## 49Q: What is `API Integration`? Which is better `fetch` and `axios`?
+A: 
+
+---
+
+## 50Q: What is `Material-UI`?
+A:
+
+---
+
