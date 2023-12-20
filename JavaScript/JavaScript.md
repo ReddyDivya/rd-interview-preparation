@@ -1333,7 +1333,177 @@ console.log(emojis.splice(1, 2, '😀')); //['👑', '💼']
 
 ---
 
-## 39Q: 
+## 39Q: Find elements from an array over 60.
+A:
+```
+let arr = [111, 43, 56, 78, 65, 123];
+console.log(arr.filter(elem => elem > 60));
+```
 
+### Output
+```
+[111, 78, 65, 123]
+```
 
+---
 
+## 39Q: Multiply elements from an array with 20.
+A:
+```
+let arr = [2, 11, 4, 6, 7, 5, 12];
+console.log(arr.map((index, elem) => elem*2));
+```
+
+### Output
+```
+[4, 22, 8, 12, 14, 10, 24]
+```
+
+---
+
+## 40Q: Guess the output of the code snippet?
+```
+console.log('Hello');
+
+setTimeout(() => {
+  console.log('How are you?')
+}, 0);
+
+console.log('Bye');
+```
+
+### Output
+```
+Hello
+Bye
+How are you?
+```
+
+### Explanation:
+
+- The first console.log('Hello') is executed, and "Hello" is printed to the console.
+- The setTimeout function is encountered. It schedules the anonymous arrow function to be executed after a delay of 0 milliseconds. However, the execution of this function is deferred to a later point in the event loop.
+- The console.log('Bye') is executed, and "Bye" is printed to the console.
+- Now, the event loop gets to the point where it executes the function scheduled by setTimeout. "How are you?" is printed to the console.
+
+---
+
+## 43Q: What is the output of the code snippet below?
+```
+console.log(a);
+console.log(b);
+var a = 10;
+let b = 20;
+```
+A: This code will result in an error. The reason is that there's a temporal dead zone for variables declared with let and const before their declaration. In your code, you try to log the values of a and b before they are declared.
+
+### Output
+
+```
+undefined
+Uncaught ReferenceError: b is not defined at <anonymous>:2:13
+```
+---
+
+## 44Q: What is `splice` and `slice`?
+A: `splice` and `slice` are two array methods in JavaScript, and they serve different purposes.
+
+### 1. splice
+The splice method is used to change the contents of an array by `removing or replacing existing elements and/or adding new elements in place`. It modifies the original array. 
+
+### The syntax for splice is as follows:
+```
+array.splice(start, deleteCount, item1, item2, ...);
+```
+
+- `start`: The index at which to start changing the array.
+- `deleteCount`: The number of elements to remove from the array. If set to 0, no elements are removed.
+- `item1, item2, ...`: Elements to add to the array at the specified start index.
+
+### Example
+```
+let fruits = ['apple', 'banana', 'orange', 'grape'];
+
+// Remove 1 element starting from index 1 and replace it with 'kiwi' and 'melon'
+fruits.splice(1, 1, 'kiwi', 'melon');
+
+console.log(fruits); // Output: ['apple', 'kiwi', 'melon', 'orange', 'grape']
+```
+
+### 2. slice
+The slice method, on the other hand, returns a shallow copy of a portion of an array into a new array. It doesn't modify the original array. 
+
+### The syntax for slice is as follows:
+```
+array.slice(start, end);
+```
+
+`start`: The beginning index of the slice. If omitted, it starts from the beginning of the array.
+`end`: The ending index (exclusive) of the slice. If omitted, it goes up to the end of the array.
+
+### Example
+```
+let numbers = [1, 2, 3, 4, 5];
+
+// Create a new array containing elements from index 1 to 3 (exclusive)
+let slicedNumbers = numbers.slice(1, 3);
+
+console.log(slicedNumbers); // Output: [2, 3]
+console.log(numbers); // Original array is unchanged: [1, 2, 3, 4, 5]
+```
+
+In summary, splice is used to modify the original array by adding, removing, or replacing elements, while slice is used to create a new array containing a portion of the original array without modifying the original array.
+
+---
+## 45Q: What is `reduce`?
+A: The reduce method is an array method in JavaScript used for reducing the elements of an array to a single value. It iterates over each element of the array, applying a callback function that you provide, and accumulates a result.
+
+### The syntax for reduce is as follows:
+
+```
+array.reduce(callback(accumulator, currentValue, index, array), initialValue);
+```
+
+callback: A function that is called for each element in the array. It takes four arguments:
+
+accumulator: The accumulator accumulates the callback's return values. It is the accumulated result of the previous iterations.
+currentValue: The current element being processed in the array.
+index: (optional) The index of the current element being processed in the array.
+array: (optional) The array reduce was called upon.
+initialValue: (optional) A value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used as the initial accumulator value, and the iteration will start from the second element.
+
+### Example
+```
+let numbers = [1, 2, 3, 4, 5];
+
+let sum = numbers.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15
+```
+
+In this example, the reduce method starts with an initial accumulator value of 0 and adds each element of the array to it. The final result is the sum of all the elements in the array.
+
+The reduce method is powerful and versatile. You can use it for various tasks, such as calculating averages, finding the maximum or minimum value, flattening arrays, and more. It's a functional programming concept that allows you to express complex operations concisely.
+
+---
+
+## 46Q: Print `Hello, How are you?` as `Hello Divya, How are you?`
+A:
+### Using Template Literals
+```
+let name = "Divya";
+let greeting = `Hello ${name}, How are you?`;
+
+console.log(greeting);
+```
+
+### Using replace
+```
+let str = "Hello, How are you?";
+console.log(str.replace("Hello", "Hello Divya"));
+```
+---
+
+## 46Q: Guess the output of the code snippet?
