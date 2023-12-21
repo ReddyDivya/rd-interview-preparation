@@ -1657,9 +1657,52 @@ A:
 
 ---
 
+## 79Q: What are mutables in `state` and `props`?
+A:
 
+---
 
+## 80Q: Which hook is used for accessing data from an `API`?
+A:
 
+---
+
+## 81Q: How to write `Custom Hooks`?
+A:
+
+---
+
+## 82Q: Can we use `hooks outside of the function components`?
+A:
+
+---
+
+## 83Q: What is `useCallback`?
+A:
+
+---
+
+## 84Q: What are the `main 3 components of Redux`?
+A: action, reducer, store
+
+---
+
+## 85Q: What is `action`, `reducer`, `store`?
+A:
+
+---
+
+## 86Q: How do we perform an `action from a component to the redux store`?
+A:
+
+---
+
+## 87Q:  How do we `access data from a component from the redux store`?
+A:
+
+---
+
+## 88Q: 
 
 
 
