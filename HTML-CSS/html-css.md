@@ -19,3 +19,15 @@ A:
 A:
 
 ---
+
+## 5Q: What is the difference between `visibility`, `display:none`?
+A:
+
+---
+
+## 6Q: What is the difference between `padding`, `margin`?
+A:
+
+---
+
+## 7Q: 
