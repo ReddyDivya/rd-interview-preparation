@@ -1643,6 +1643,16 @@ A:
 ---
 
 ## 76Q: How to manage nested routes in terms of role-based routing?
+A: 
+
+---
+
+## 77Q: How to pass `props` from `child to parent`?
+A:
+
+---
+
+## 78Q: What are the `steps to add router`?
 A:
 
 ---
