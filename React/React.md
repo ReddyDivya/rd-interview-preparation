@@ -1702,7 +1702,33 @@ A:
 
 ---
 
-## 88Q: 
+## 88Q: What is `extra reducer` in redux?
+A:
+
+---
+
+## 89Q: what is a `useSelector` in the redux?
+A:
+
+---
+
+## 90Q: What is `Redux saga`?
+A:
+
+---
+
+## 91Q: What is the representation of `^16.1.0` version?
+A:
+
+---
+
+## 92Q: What is `React-formik`?
+A:
+
+---
+
+## 93Q: 
+
 
 
 
