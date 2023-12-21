@@ -1727,7 +1727,8 @@ A:
 
 ---
 
-## 93Q: 
+## 93Q: In `responsive web design`, the component is going to re-render the component or does it automatically?
+A: It does it automatically re-renders the component.
 
 
 
