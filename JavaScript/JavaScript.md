@@ -1839,3 +1839,94 @@ const array = [1, 2, 3, 4, 5];
 console.log(sumWithForLoop(array)); // Output: 15
 ```
 
+---
+
+## 70Q: What is the output of this code?
+```
+var a = 10;
+{
+  var a=-10;
+}
+
+let b = a;
+{
+  let b=-20;
+}
+console.log(b);
+```
+A: 
+### Output
+```
+var a = 10;//10
+{
+  var a=-10;//-10
+}
+
+let b = a;//-10 because of 'var' which is a global scope
+{
+  let b=-20;//-20
+}
+console.log(b);//-10
+```
+---
+
+## 72Q: What is the output of the code?
+```
+b = 25;
+var b;
+
+console.log(b);
+```
+A:
+
+### Output
+```
+25
+```
+---
+
+## 73Q: What is `Object Oriented Programming`?
+A: 
+
+---
+
+## 74Q: Is it possible to `have property as a function in a class`?
+A:
+
+---
+
+## 75Q: What is the difference between `==` and `===`?
+A:
+
+---
+
+## 76Q: List `Array methods`?
+A:
+
+---
+
+## 77Q: What is a `callback function`?
+A:
+
+---
+
+## 78Q: What is an `asynchronous function`?
+A:
+
+---
+
+## 79Q: Is `fetch` an `asynchronous` or `synchronous` function?
+A:
+
+---
+
+## 80Q: How do we `handle errors using fetch`?
+A:
+
+---
+
+## 81Q:
+
+
+
+## 
