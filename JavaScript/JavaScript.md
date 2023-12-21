@@ -1613,4 +1613,229 @@ Therefore, console.log(3 - "3"); will output 0.
 
 ---
 
-## 59Q:
+## 59Q: What are `primitive` and `non-primitive` datatypes?
+A:
+
+---
+
+## 60Q: How can we reassign the object?
+A:
+### Output
+```
+const obj = {name: 'Khansar', age: 43};
+
+// Reassigning the value of the 'name' property
+obj.name = 'NewName';
+
+// Now the 'name' property has been updated
+console.log(obj); //{ name: 'Sultan', age: 43 }
+```
+---
+
+## 61Q: How can we not reassign the object despite having the reassign statement in the code like below code snippet?
+```
+const obj = {name: 'Khansar', age: 43};
+
+// Reassigning the value of the 'name' property
+obj.name = 'NewName';
+
+// Now the 'name' property has been updated
+console.log(obj); //{ name: 'Sultan', age: 43 }
+```
+A:
+If you want to prevent the reassignment of the object properties, including the name property, you can use Object.freeze() to make the object immutable. However, keep in mind that this makes the entire object immutable, not just individual properties.
+
+### Example
+```
+const obj = Object.freeze({name: 'Khansar', age: 43});
+
+// Reassigning the value of the 'name' property
+obj.name = 'Sultan';
+
+// Now the 'name' property has been updated
+console.log(obj);//{ name: 'Khansar', age: 43 }
+```
+
+---
+
+## 62Q: What is an `Object.seal()`?
+A: Object.seal() is a method in JavaScript that seals an object, preventing new properties from being added and marking all existing properties as non-configurable. Unlike Object.freeze(), Object.seal() allows the values of properties to be changed, but it does not allow the addition or removal of properties.
+
+### Example
+```
+const obj = { name: 'Khansar', age: 43 };
+
+// Seal the object
+Object.seal(obj);
+
+// Attempt to add a new property
+obj.newProperty = 'someValue'; // This will not have any effect
+
+// Attempt to delete an existing property
+delete obj.name; // This will not have any effect
+
+// Attempt to modify the value of an existing property
+obj.age = 44; // This is allowed
+
+console.log(obj); // { name: 'Khansar', age: 44 }
+```
+
+---
+
+## 63Q: is there any difference between `Object.freeze()` and `Object.seal()`?
+A: Yes, there is a difference between Object.freeze() and Object.seal() in JavaScript, although both methods are used to make objects less mutable.
+
+### Object.freeze()
+
+- It makes an object completely immutable, both in terms of adding or removing properties and modifying existing property values.
+- It prevents any changes to the object, including changes to property values.
+- It performs a deep freeze, meaning nested objects within the frozen object are also frozen.
+
+### Example:
+
+```
+const obj = { name: 'Khansar', age: 43 };
+Object.freeze(obj);
+
+// These operations will not have any effect
+obj.newProperty = 'someValue';
+delete obj.name;
+obj.age = 44;
+
+console.log(obj); // { name: 'Khansar', age: 43 }
+```
+
+### Object.seal()
+
+- It allows changes to existing property values but prevents the addition or removal of properties.
+- It makes an object partially immutable, as you can still modify the values of existing properties.
+- It does not perform a deep seal, meaning nested objects within the sealed object are not sealed.
+
+### Example:
+
+```
+const obj = { name: 'Khansar', age: 43 };
+Object.seal(obj);
+
+// These operations will not have any effect
+obj.newProperty = 'someValue';
+delete obj.name;
+
+// This operation is allowed
+obj.age = 44;
+
+console.log(obj); // { name: 'Khansar', age: 44 }
+```
+
+In summary, Object.freeze() creates a fully immutable object, while Object.seal() allows changes to existing property values but prevents the addition or removal of properties. Both methods help in controlling the mutability of objects based on specific requirements.
+
+### Example on `Object.freeze()` and `Object.seal()`:
+```
+// Object.freeze - completely freezes, doesn't allow any changes
+const obj = Object.freeze({name: 'Khansar', age: 43});
+
+obj.name = 'Sultan';
+obj.age = '34'
+console.log(obj);//{ name: 'Khansar', age: 43 }
+
+/*
+Object.seal - partially mutable
+new properties are not added/removed but exisiting propert values are changed.
+*/
+const obj2 = Object.seal({name:'Divya', age: 25});
+obj2.name='Reddy';//existing property values are changed
+obj2.gender='female';//new properties are not added/deleted
+console.log(obj2);//{ name: 'Reddy', age: 25 }
+```
+---
+
+## 64Q: Add elements `1, 2` at the beginning and `7, 8` at the end?
+A:
+### Output:
+
+```
+let arr = [3, 4, 5]
+console.log([1, 2, 4, ...arr, 7, 8]);
+```
+
+### Explanation:
+
+- `[1, 2, 4]`: This part creates an array with three elements: 1, 2, and 4.
+
+- `...arr`: It spreads the elements of the arr array into the new array. So, [1, 2, 4, ...arr] is equivalent to [1, 2, 4, 3, 4, 5].
+
+- `7, 8`: Two more elements, 7 and 8, are added to the array.
+
+### Combining all the parts, the final array becomes:
+```
+[1, 2, 4, 3, 4, 5, 7, 8]
+```
+---
+
+## 65Q: Give me a simple example of closures
+A:
+### Closure:
+Closures are a powerful concept in JavaScript where a function retains access to variables from its outer (enclosing) scope even after the outer function has finished executing. 
+
+### Example:
+
+```
+function outer(a) {
+  // inner is a closure that has access to the 'a' parameter
+  function inner(b) {
+    console.log(`a: ${a}`);
+    console.log(`b: ${b}`);
+    console.log(`sum: ${a + b}`);
+  }
+
+  // outer returns the inner function
+  return inner;
+}
+
+// Calling outer(2) returns the inner function
+// Then, calling the returned inner function with (3)
+// uses the 'a' value from the outer scope and prints the sum
+outer(2)(3);
+```
+---
+
+## 66Q: What is `Event Propagation`?
+A:
+
+
+---
+## 67Q: What is `Event Bubbling`?
+A:
+
+
+---
+## 68Q: What is `Event Capturing`?
+A:
+
+
+---
+
+## 69Q: Write a code for the `sum of the elements from an array`
+A:
+
+### 1. Using reducer:
+
+```
+let arr = [1, 2, 3, 4];//10
+console.log(arr.reduce((a, b) => a+b))
+```
+
+### 2. Using for loop
+```
+function sumWithForLoop(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+const array = [1, 2, 3, 4, 5];
+console.log(sumWithForLoop(array)); // Output: 15
+```
+
