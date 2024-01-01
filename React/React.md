@@ -2,9 +2,9 @@
 
 ## 1Q: How to create a `React Projects`?
 A: `Create React App (CRA)` is a package, more precisely, it's a command-line tool that sets up a new React project with a sensible default configuration.
-  - We need to have both `Node.js` and `npm (Node Package Manager)` installed on our machine. CRA relies on these tools for project setup and management `Node > 14 version`.
-  - This package give us bundlers, set up of jest, react-testing libraries. It's a ready to work on project instead of installing all these.
-  - Create React App doesn’t handle backend logic or databases; it just creates a frontend build pipeline, so we can use it with any backend we want.
+  - We need to have both `Node.js` and `npm (Node Package Manager)` installed on our machine. CRA relies on these tools for project setup and management of the `Node > 14 version`.
+  - This package gives us bundlers, set up of jest, and react-testing libraries. It's ready to work on the project instead of installing all these.
+  - Create React App doesn’t handle backend logic or databases; it just creates a frontend build pipeline so that we can use it with any backend we want.
   - It uses `Babel` and `webpack`, but we don’t need to know anything about them.
   - When we’re ready to deploy to production, create a minified bundle with `npm run build`.
   - We don’t need to install or configure tools like `webpack` or `Babel`. They are preconfigured and hidden so that we can focus on the code.
@@ -20,7 +20,7 @@ npm start //starts development server
 ## 2Q: What is `Packaging content`?
 A: `Packaging the content` generally refers to bundling and preparing the application's source code, assets, and dependencies for deployment.
 - This process ensures that the application is optimized for performance, reducing file sizes and organizing the code in a way that can be efficiently served to users.
-- Like Minification, Bundling (mostly used is Webpack), Transpilation, Tree Shaking, Code Splitting.
+- Like Minification, Bundling (mostly used is Webpack), Transpilation, Tree Shaking, and Code Splitting.
 - Webpack, together with other tools like Babel, ESLint, and various plugins, Webpack facilitates an efficient and optimized build process.
 - By packaging the content in this way, developers can ensure that their React applications are performant, load quickly, and provide a good user experience.
 - Additionally, the resulting optimized bundles are more suitable for deployment to production environments.
@@ -28,14 +28,14 @@ A: `Packaging the content` generally refers to bundling and preparing the applic
 ---
 
 ## 3Q: What is `build`?
-A: `Create-react-app` package has a `webpack bundler` which compiles our project and runs it on localhost(server).
+A: The `Create-react-app` package has a `webpack bundler` that compiles our project and runs it on localhost(server).
 
 ---
 
 ## 4Q: What is in the `public` folder?
 A: `index.html` - The main HTML file for our React application. This file typically contains a root element (e.g., a <div> with an id like `root`) where our React app is mounted. It also includes `links to external stylesheets`, `scripts`, and other `meta` tags.
 
-`Favicon and Other Static Assets` - Images, icons, or other files that should be served directly by the server. For example, a favicon.ico file for the website's icon.
+`Favicon and Other Static Assets` - Images, icons, or other files that the server should serve directly. For example, a favicon.ico file for the website's icon.
 
 `manifest.json` - This is a JSON file that provides metadata about the web application. It includes information such as the application's name, icons for different devices, background color, display mode, and other settings. The manifest is used by the browser when a user decides to add the web app to their home screen.
 
@@ -1456,7 +1456,9 @@ const ChildComponent = ({ onClick }) => {
 ---
 
 ## 51Q: How does `Routing` work?
-A:
+## 51Q: What is `Role Based Access Control (RBAC)` work?
+## 51Q: How to manage `Protected Routes` work?
+A: /home should work only for logged in user
 
 ---
 
@@ -1592,7 +1594,7 @@ A:
 
 ---
 
-## 66Q: What is a `Redux Flow`?
+## 66Q: What is a `Redux Flow` and When to use `Redux`?
 A: 
 
 ---
@@ -1627,17 +1629,21 @@ A:
 
 ---
 
-## 73Q: What are `Lifecycle methods of React`?
-A:
+## 73Q: What are the `Lifecycle methods`  of React`?
+A: Mount, Update, Unmount phase - order of these phase
 
 ---
 
-## 74Q: In which case we use `Higher Order Components`?
-A:
+## 74Q: What is  `Higher Order Components` and In which case do we use `Higher Order Components`?
+## 74Q: Why to use  `Higher Order Components` and How to use `Higher Order Components`?
+A: 
 
 ---
 
 ## 75Q: What is `Lazy Loading`?
+## 75Q: What is `Code Splitting`?
+## 75Q: What is `Chunking`?
+## 75Q: What is `<suspense>`?
 A:
 
 ---
@@ -1730,8 +1736,96 @@ A:
 ## 93Q: In `responsive web design`, the component is going to re-render the component or does it automatically?
 A: It does it automatically re-renders the component.
 
+---
 
+## 94Q: What is a `Redux Tool Kit`?
+A:
 
+---
+
+## 95Q: How `Diff` Algorithm?
+A:
+
+---
+
+## 96Q: What is `SSR` and `CSR`
+A: `SSR - Server Side Render`
+
+---
+
+## 97Q: What is `Query Params`?
+A:
+
+---
+
+## 98Q: What is a `Dynamic Routing`?
+A:
+
+---
+
+## 99Q: What is `Testing`?
+A:
+
+---
+
+## 100Q: What is a `React Testing Library`?
+A:
+
+---
+
+## 101Q: What is `async task` [use useEffect in depth]?
+A: `API calls` - fetch, axios
+  `Events` - click, scroll,
+  `Promise`
+  `Callbacks`
+  `setTimeout`
+  `setInterval`
+
+---
+
+## 102Q: What is `Modularity`?
+A: The file should not exceed more than 100, 150 lines.
+
+---
+
+## 103Q: What is `Resuability`?
+A:
+
+---
+
+## `104Q: What is `Testability`?
+A:
+
+---
+
+## 105Q: What is `Performance`?
+A: Shimmer UI, Lazy Loading, Optimize images/assets, Optimize JS, Optimize CSS, write better code
+First optimization is done at a bundler level
+CDN
+optimize at the server level
+Rendering components
+
+---
+
+## 106Q: How to write a code to make `Rendering components run fast and optimize`?
+A: 
+
+---
+## 107Q: What is `Styling`?
+A: Tailwind, bootstrap, material ui, css, scss, style x, inline-css, 
+
+---
+
+## 108Q: What is the advantage of `tailwind over bootstrap`?
+## 108Q: What is the advantage of `tailwind over css`?
+## 108Q: What is the advantage of `tailwind over styled components`?
+## 108Q: What is the advantage of `bootstrap over css`
+## 108Q: What is the advantage of `css over inline-css`
+
+---
+
+## 109Q: What is `Accessibility`?
+A: talk about performance, accessibility, testability, security, 
 
 
 ## 28Q: What is `class components`?
