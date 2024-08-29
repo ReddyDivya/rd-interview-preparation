@@ -1,7 +1,7 @@
 # React Interview Questions
 
 Q) What is React? Why is React known as `React`?
-A: - React is a JavaScript library used for building user interfaces, primarily for single-page applications. 
+- React is a JavaScript library used for building user interfaces, primarily for single-page applications. 
 - It allows developers to create reusable UI components, making the development process more modular and maintainable. 
 - React follows a component-based architecture, where each component is self-contained and manages its own state.
 - The name 'React' was chosen because the library is designed to enable developers to "react" to changes in application state and data.
